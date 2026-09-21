@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Méthode ACAS — BRANDOSPHÈRE Dakar</title>
+  <meta name="description" content="Découvrez la méthode ACAS de BRANDOSPHÈRE : Analyse, Construction, Activation, Scaling. Notre cadre stratégique de croissance digitale à Dakar.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* GELLIX FONT FAMILY DEFINITIONS */
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Thin'), url('./fonts/Gellix-Thin.ttf') format('truetype'); font-weight: 100; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-ThinItalic'), url('./fonts/Gellix-ThinItalic.ttf') format('truetype'); font-weight: 100; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Light'), url('./fonts/Gellix-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-LightItalic'), url('./fonts/Gellix-LightItalic.ttf') format('truetype'); font-weight: 300; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Regular'), url('./fonts/Gellix-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-RegularItalic'), url('./fonts/Gellix-RegularItalic.ttf') format('truetype'); font-weight: 400; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Medium'), url('./fonts/Gellix-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-MediumItalic'), url('./fonts/Gellix-MediumItalic.ttf') format('truetype'); font-weight: 500; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-SemiBold'), url('./fonts/Gellix-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-SemiBoldItalic'), url('./fonts/Gellix-SemiBoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Bold'), url('./fonts/Gellix-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-BoldItalic'), url('./fonts/Gellix-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-ExtraBold'), url('./fonts/Gellix-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-ExtraBoldItalic'), url('./fonts/Gellix-ExtraBoldItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Black'), url('./fonts/Gellix-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-BlackItalic'), url('./fonts/Gellix-BlackItalic.ttf') format('truetype'); font-weight: 900; font-style: italic; }
+
+    :root {
+      --indigo: #500A1E;
+      --indigo-2: #3F0717;
+      --indigo-deep: #2B040F;
+      --emerald: #FBD8B5;
+      --emerald-dim: #F7C79D;
+      --amber: #FBD8B5;
+      --cream: #FFF5EC;
+      --slate: #E4C7AC;
+      --slate-2: #B89B80;
+      --line: rgba(251, 216, 181, 0.16);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background-color: var(--indigo-deep); color: var(--cream); font-family: 'Gellix', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--indigo-deep); color: var(--cream); overflow-x: hidden; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 26px; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .eyebrow { font-family: 'Gellix', sans-serif; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--emerald); display: inline-flex; align-items: center; gap: 10px; }
+    .eyebrow::before { content: ''; width: 24px; height: 1px; background-color: var(--emerald); display: inline-block; }
+
+    h1, h2, h3, h4 { font-family: 'Gellix', sans-serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.08; color: var(--cream); }
+    .serif-italic { color: var(--emerald); }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: 'Gellix', sans-serif; font-weight: 600; font-size: 14.5px; padding: 13px 22px; border-radius: 11px; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background-color .2s ease; }
+    .btn-primary { background-color: var(--emerald); color: #500A1E; }
+    .btn-primary:hover { transform: translateY(-2px); background-color: var(--emerald-dim); }
+
+    /* Navbar */
+    .navbar { position: sticky; top: 0; z-index: 50; height: 70px; background: rgba(80, 10, 30, 0.72); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; color: var(--cream); }
+    .nav-brand svg { width: 36px; height: 36px; }
+    .nav-brand-text { font-family: 'Gellix', sans-serif; font-weight: 700; font-size: 19px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 14.5px; color: var(--slate); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--cream); }
+
+    /* Hero */
+    .page-hero { padding: 90px 0 60px; text-align: center; }
+    .page-hero h1 { font-size: clamp(34px, 5.5vw, 62px); margin: 18px 0 22px; }
+    .page-hero p { color: var(--slate); font-size: 17px; max-width: 680px; margin: 0 auto 36px; }
+
+    /* ACAS Stepper / Detailed Tabs */
+    .acas-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .acas-tab-btn {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 28px;
+      cursor: pointer;
+      font-family: 'Gellix', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--slate);
+      transition: all .25s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .acas-tab-btn .tab-num {
+      font-family: 'Gellix', sans-serif;
+      font-size: 12px;
+      color: var(--emerald);
+    }
+    .acas-tab-btn.active, .acas-tab-btn:hover {
+      background: rgba(251, 216, 181, 0.08);
+      border-color: var(--emerald);
+      color: var(--cream);
+    }
+
+    .acas-panel {
+      display: none;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 48px;
+      margin-bottom: 80px;
+    }
+    .acas-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+
+    .panel-title { font-size: 32px; margin-bottom: 16px; }
+    .panel-desc { color: var(--slate); font-size: 16px; margin-bottom: 28px; }
+
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .feature-item { display: flex; gap: 14px; align-items: flex-start; }
+    .feature-bullet { width: 22px; height: 22px; border-radius: 50%; background: rgba(18,226,154,0.15); color: var(--emerald); display: flex; align-items: center; justify-content: center; min-width: 22px; margin-top: 2px; }
+
+    .kpi-card {
+      background: var(--indigo);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+    }
+    .kpi-card h4 { font-size: 20px; margin-bottom: 16px; }
+    .kpi-badge { display: inline-block; font-family: 'Gellix', sans-serif; font-size: 12px; color: var(--emerald); background: rgba(18,226,154,0.1); padding: 4px 10px; border-radius: 6px; margin-bottom: 12px; }
+
+    /* ====================================================
+       FOOTER BRANDOSPHÈRE (COMPOSANT UNIFIÉ LANDING PAGE)
+       ================================================== */
+    .footer {
+      background: linear-gradient(180deg, #580B22 0%, #380614 100%) !important;
+      border-radius: 44px 44px 0 0 !important;
+      max-width: 1240px !important;
+      width: calc(100% - 32px) !important;
+      margin: 48px auto 0 auto !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      border-bottom: none !important;
+      padding: 70px 0 40px !important;
+      position: relative;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-desc {
+      color: var(--slate);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14.5px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--beige-poudre);
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--slate);
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(251, 216, 181, 0.18);
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: var(--slate);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        border-radius: 32px 32px 0 0 !important;
+        width: calc(100% - 20px) !important;
+        margin: 24px auto 0 auto !important;
+        padding: 50px 0 30px !important;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+      .footer-brand-header {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-bottom: 12px !important;
+      }
+      .footer-brand-header img {
+        margin: 0 auto !important;
+        display: block !important;
+        height: 32px !important;
+        width: auto !important;
+      }
+      .footer-brand-desc {
+        text-align: center !important;
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        margin: 0 auto !important;
+      }
+      .footer-col-nav, .footer-col-exp, .footer-col-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .footer-links {
+        align-items: center !important;
+      }
+      .footer-bottom {
+        text-align: center !important;
+        justify-content: center !important;
+        padding-top: 24px !important;
+      }
+    }
+  
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+    }
+
+  
+    /* --- ENHANCED BRANDOSPHERE THEME (MARRON #500A1E & BEIGE POUDRÉ #FBD8B5) --- */
+    .navbar {
+      position: fixed !important;
+      top: 16px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: calc(100% - 48px) !important;
+      max-width: 1140px !important;
+      z-index: 100 !important;
+      height: 64px !important;
+      background: rgba(80, 10, 30, 0.88) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.22) !important;
+      border-radius: 9999px !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 24px !important;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 20px rgba(251, 216, 181, 0.08) !important;
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        width: calc(100% - 24px) !important;
+        top: 12px !important;
+        height: 58px !important;
+        padding: 0 16px !important;
+      }
+    }
+
+    .btn-primary, .btn-amber {
+      background-color: #FBD8B5 !important;
+      color: #500A1E !important;
+      font-weight: 700 !important;
+      border: 1px solid #FBD8B5 !important;
+      box-shadow: 0 4px 16px rgba(251, 216, 181, 0.25) !important;
+      transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+    .btn-primary:hover, .btn-amber:hover {
+      background-color: #F7C79D !important;
+      color: #500A1E !important;
+      transform: scale(1.03) translateY(-2px) !important;
+      box-shadow: 0 12px 28px rgba(251, 216, 181, 0.4) !important;
+    }
+    .btn-ghost {
+      background-color: rgba(251, 216, 181, 0.08) !important;
+      color: #FFF5EC !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      transition: all 0.25s ease !important;
+    }
+    .btn-ghost:hover {
+      border-color: #FBD8B5 !important;
+      color: #FBD8B5 !important;
+      background-color: rgba(251, 216, 181, 0.16) !important;
+      transform: translateY(-2px) !important;
+    }
+    .eyebrow {
+      color: #FBD8B5 !important;
+    }
+    .eyebrow::before, .eyebrow::after {
+      background-color: #FBD8B5 !important;
+    }
+    .serif-italic, .serif-italic {
+      color: #FBD8B5 !important;
+    }
+
+  
+    /* ==========================================================================
+       BRANDOSPHÈRE ULTRA-MODERN LUXURY SYSTEM (MARRON #500A1E & BEIGE POUDRÉ #FBD8B5)
+       ========================================================================== */
+    :root {
+      --marron-dominant: #500A1E;
+      --marron-deep: #21030B;
+      --marron-card: #3A0615;
+      --marron-elevated: #540A1F;
+      --beige-poudre: #FBD8B5;
+      --beige-hover: #F7C79D;
+      --beige-light: #FFF5EC;
+      --indigo: #500A1E;
+      --indigo-2: #3F0717;
+      --indigo-deep: #21030B;
+      --emerald: #FBD8B5;
+      --emerald-dim: #F7C79D;
+      --amber: #FBD8B5;
+      --cream: #FFF5EC;
+      --slate: #E4C7AC;
+      --slate-2: #B89B80;
+      --line: rgba(251, 216, 181, 0.18);
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #21030B; }
+    ::-webkit-scrollbar-thumb { background: rgba(251, 216, 181, 0.25); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FBD8B5; }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FBD8B5, #FFE4CB);
+      z-index: 10000;
+      width: 0%;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 12px rgba(251, 216, 181, 0.8);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #21030B !important;
+      color: #FFF5EC !important;
+      font-family: 'Plus Jakarta Sans', 'Gellix', sans-serif !important;
+    }
+
+    body {
+      background-color: #21030B !important;
+      color: #FFF5EC !important;
+      overflow-x: hidden;
+    }
+
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.045;
+    }
+
+    /* Ambient Orbs */
+    .bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* ==================================================
+       NAVBAR STYLES (Fixed Floating Pill - Zero Wrap)
+       ================================================== */
+    .navbar {
+      position: fixed !important;
+      top: 18px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: calc(100% - 36px) !important;
+      max-width: 1160px !important;
+      z-index: 1000 !important;
+      height: 64px !important;
+      background: rgba(43, 4, 15, 0.88) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.22) !important;
+      border-radius: 9999px !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 22px !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(251, 216, 181, 0.08) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .navbar-inner {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+    }
+
+    .nav-brand {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .nav-logo-img {
+      height: 28px !important;
+      width: auto !important;
+      max-width: 180px !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    .nav-links {
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .nav-links a {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 13.5px !important;
+      font-weight: 500 !important;
+      color: #E4C7AC !important;
+      padding: 7px 13px !important;
+      border-radius: 9999px !important;
+      transition: all 0.25s ease !important;
+      white-space: nowrap !important;
+      display: inline-block !important;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #500A1E !important;
+      background-color: #FBD8B5 !important;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 14px rgba(251, 216, 181, 0.3) !important;
+    }
+
+    .nav-cta-wrap {
+      flex-shrink: 0 !important;
+    }
+
+    .nav-cta-btn {
+      font-size: 13.5px !important;
+      padding: 10px 20px !important;
+      white-space: nowrap !important;
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-btn {
+      display: none !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      gap: 5px !important;
+      width: 40px !important;
+      height: 40px !important;
+      background: transparent !important;
+      border: 1px solid rgba(251, 216, 181, 0.2) !important;
+      border-radius: 50% !important;
+      cursor: pointer !important;
+      padding: 8px !important;
+      z-index: 1002 !important;
+    }
+
+    .mobile-menu-btn span {
+      display: block !important;
+      width: 100% !important;
+      height: 2px !important;
+      background-color: #FBD8B5 !important;
+      border-radius: 2px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .mobile-menu-btn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg) !important;
+    }
+    .mobile-menu-btn.open span:nth-child(2) {
+      opacity: 0 !important;
+    }
+    .mobile-menu-btn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg) !important;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100vh !important;
+      background: rgba(33, 3, 11, 0.97) !important;
+      backdrop-filter: blur(24px) !important;
+      -webkit-backdrop-filter: blur(24px) !important;
+      z-index: 999 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 18px !important;
+      padding: 40px 24px !important;
+      transform: translateY(-100%) !important;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      pointer-events: none !important;
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0) !important;
+      pointer-events: auto !important;
+    }
+
+    .mobile-drawer a {
+      font-size: 19px !important;
+      font-weight: 600 !important;
+      color: #FFF5EC !important;
+      padding: 10px 24px !important;
+      border-radius: 9999px !important;
+      transition: all 0.2s ease !important;
+      white-space: nowrap !important;
+    }
+
+    .mobile-drawer a:hover {
+      color: #500A1E !important;
+      background-color: #FBD8B5 !important;
+    }
+
+    @media (max-width: 960px) {
+      .nav-links, .nav-cta-wrap {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: flex !important;
+      }
+      .navbar {
+        height: 56px !important;
+        padding: 0 16px !important;
+        top: 12px !important;
+        width: calc(100% - 24px) !important;
+      }
+      .nav-logo-img {
+        height: 24px !important;
+      }
+    }
+
+    /* Dramatic Titles & Accents */
+    .serif-italic, .hero-dramatic-serif {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-style: italic !important;
+      font-weight: 700 !important;
+      color: #FBD8B5 !important;
+      padding: 0 4px;
+    }
+
+    /* Eyebrow & Badges */
+    .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 12px !important;
+      letter-spacing: 0.22em !important;
+      text-transform: uppercase !important;
+      color: #FBD8B5 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      background: rgba(251, 216, 181, 0.08) !important;
+      border: 1px solid rgba(251, 216, 181, 0.2) !important;
+      padding: 6px 16px !important;
+      border-radius: 9999px !important;
+    }
+    .eyebrow::before, .eyebrow::after { display: none !important; }
+
+    /* Ultra Modern Cards */
+    .problem-card-box, .service-card, .method-step-card, .fondateur-card, .stat-card, .pack-card, .diag-step-card, .faq-item {
+      border-radius: 2rem !important;
+      background: rgba(58, 6, 21, 0.58) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.18) !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(251, 216, 181, 0.15) !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .problem-card-box:hover, .service-card:hover, .method-step-card:hover, .fondateur-card:hover, .stat-card:hover, .pack-card:hover, .diag-step-card:hover, .faq-item:hover {
+      transform: translateY(-6px) scale(1.015) !important;
+      border-color: rgba(251, 216, 181, 0.45) !important;
+      box-shadow: 0 30px 60px rgba(20, 2, 7, 0.8), 0 0 30px rgba(251, 216, 181, 0.18) !important;
+    }
+
+    /* Buttons */
+    .btn-primary, .btn-amber {
+      background: linear-gradient(135deg, #FBD8B5 0%, #F7C79D 100%) !important;
+      color: #500A1E !important;
+      font-weight: 700 !important;
+      font-size: 15px !important;
+      padding: 14px 28px !important;
+      border-radius: 9999px !important;
+      border: 1px solid #FBD8B5 !important;
+      box-shadow: 0 6px 20px rgba(251, 216, 181, 0.28) !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover, .btn-amber:hover {
+      transform: scale(1.04) translateY(-2px) !important;
+      box-shadow: 0 14px 35px rgba(251, 216, 181, 0.45), 0 0 20px rgba(251, 216, 181, 0.2) !important;
+    }
+
+    .btn-ghost {
+      background: rgba(251, 216, 181, 0.08) !important;
+      color: #FFF5EC !important;
+      font-weight: 600 !important;
+      font-size: 15px !important;
+      padding: 14px 28px !important;
+      border-radius: 9999px !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      backdrop-filter: blur(12px) !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(251, 216, 181, 0.18) !important;
+      border-color: #FBD8B5 !important;
+      color: #FBD8B5 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Pulsing Badge Dot */
+    .pulse-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #FBD8B5;
+      box-shadow: 0 0 10px #FBD8B5;
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; box-shadow: 0 0 18px #FBD8B5; }
+    }
+
+    /* GSAP Smooth Reveal Class */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* ==========================================================================
+       BRANDOSPHÈRE ARCHITECTURAL MINIMALISM (MARRON #500A1E & BEIGE POUDRÉ #FBD8B5)
+       Design Épuré, Doux, Non-Agressif, Convaincant
+       ========================================================================== */
+
+    :root {
+      --marron-dominant: #500A1E;
+      --marron-deep: #1A0309;
+      --marron-card: #2B050E;
+      --marron-elevated: #3D0715;
+      --beige-poudre: #FBD8B5;
+      --beige-hover: #F7C79D;
+      --beige-light: #FFF7F0;
+      --indigo: #500A1E;
+      --indigo-2: #2B050E;
+      --indigo-deep: #1A0309;
+      --emerald: #FBD8B5;
+      --emerald-dim: #F7C79D;
+      --amber: #FBD8B5;
+      --cream: #FFF7F0;
+      --slate: #E2C6AD;
+      --slate-2: #B0937A;
+      --line: rgba(251, 216, 181, 0.12);
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A0309; }
+    ::-webkit-scrollbar-thumb { background: rgba(251, 216, 181, 0.2); border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FBD8B5; }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #FBD8B5, #FFE4CB);
+      z-index: 10000;
+      width: 0%;
+      transition: width 0.1s ease-out;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #1A0309 !important;
+      color: #FFF7F0 !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      line-height: 1.7 !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #1A0309 !important;
+      color: #FFF7F0 !important;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      max-width: 1040px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+    }
+
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+    }
+
+    /* Ambient Soft Lighting */
+    .minimal-bg-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.25;
+    }
+
+    /* Floating Pill Navbar - Soft Minimalist */
+    .navbar {
+      position: fixed !important;
+      top: 20px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: calc(100% - 48px) !important;
+      max-width: 1040px !important;
+      z-index: 1000 !important;
+      height: 60px !important;
+      background: rgba(35, 4, 12, 0.78) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.16) !important;
+      border-radius: 9999px !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 24px !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        width: calc(100% - 24px) !important;
+        top: 12px !important;
+        height: 54px !important;
+        padding: 0 16px !important;
+      }
+    }
+
+    .nav-brand-text {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 17px !important;
+      letter-spacing: 0.05em !important;
+      color: #FFF7F0 !important;
+    }
+
+    .nav-links a {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 13.5px !important;
+      font-weight: 400 !important;
+      color: #E2C6AD !important;
+      padding: 6px 14px !important;
+      border-radius: 9999px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #500A1E !important;
+      background-color: #FBD8B5 !important;
+      font-weight: 600 !important;
+    }
+
+    /* Elegant Serif Accent */
+    .serif-italic, .hero-serif-italic {
+      font-family: 'Instrument Serif', Georgia, serif !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      font-size: 1.08em !important;
+      color: #FBD8B5 !important;
+    }
+
+    /* Minimal Eyebrows & Badges */
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 11px !important;
+      letter-spacing: 0.18em !important;
+      text-transform: uppercase !important;
+      color: #FBD8B5 !important;
+      background: rgba(251, 216, 181, 0.06) !important;
+      border: 1px solid rgba(251, 216, 181, 0.16) !important;
+      padding: 5px 14px !important;
+      border-radius: 9999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+    .eyebrow::before, .eyebrow::after { display: none !important; }
+
+    /* Minimal Cards Architecture */
+    .problem-card-box, .service-card, .method-step-card, .fondateur-card, .stat-card, .pack-card, .diag-step-card, .faq-item {
+      border-radius: 1.8rem !important;
+      background: rgba(43, 5, 14, 0.5) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.14) !important;
+      padding: 38px 34px !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .problem-card-box:hover, .service-card:hover, .method-step-card:hover, .fondateur-card:hover, .stat-card:hover, .pack-card:hover, .diag-step-card:hover, .faq-item:hover {
+      transform: translateY(-4px) !important;
+      border-color: rgba(251, 216, 181, 0.35) !important;
+      box-shadow: 0 24px 50px rgba(10, 1, 4, 0.6) !important;
+    }
+
+    /* Soft Buttons */
+    .btn-primary, .btn-amber {
+      background: #FBD8B5 !important;
+      color: #500A1E !important;
+      font-weight: 600 !important;
+      font-size: 14.5px !important;
+      padding: 13px 26px !important;
+      border-radius: 9999px !important;
+      border: 1px solid #FBD8B5 !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover, .btn-amber:hover {
+      background: #F7C79D !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 24px rgba(251, 216, 181, 0.3) !important;
+    }
+
+    .btn-ghost {
+      background: rgba(251, 216, 181, 0.05) !important;
+      color: #FFF7F0 !important;
+      font-weight: 500 !important;
+      font-size: 14.5px !important;
+      padding: 13px 26px !important;
+      border-radius: 9999px !important;
+      border: 1px solid rgba(251, 216, 181, 0.2) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(251, 216, 181, 0.14) !important;
+      border-color: #FBD8B5 !important;
+      color: #FBD8B5 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Pulse Dot Minimal */
+    .pulse-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #FBD8B5;
+      box-shadow: 0 0 8px #FBD8B5;
+      animation: pulse-soft 2.5s infinite ease-in-out;
+    }
+    @keyframes pulse-soft {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+    }
+
+    /* Soft Section Spacing */
+    .hero-section, .section-problem, .section-fondateurs, .page-hero {
+      padding: 110px 0 90px !important;
+    }
+
+    .reveal-soft {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-soft.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+</style>
+  <!-- Google Fonts & GSAP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Google Fonts & GSAP Minimalist Setup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+</head>
+<body>
+  <svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+  </svg>
+
+
+  <!-- ==================================================
+       NAVBAR (Fixed Floating Pill - Zero Wrap)
+       ================================================== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="nav-brand" aria-label="BRANDOSPHÈRE Accueil">
+        <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" class="nav-logo-img">
+      </a>
+
+      <!-- Desktop Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="methode.html" class="active">Méthode</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="histoire.html">Notre Histoire</a></li>
+          <li><a href="index.html#fondateurs">Fondateurs</a></li>
+          <li><a href="academy.html">Academy</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <div class="nav-cta-wrap">
+        <a href="diagnostic.html" class="btn btn-primary nav-cta-btn">Parler de mon projet</a>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Accueil</a>
+    <a href="methode.html" class="active">Méthode</a>
+    <a href="services.html">Services</a>
+    <a href="histoire.html">Notre Histoire</a>
+    <a href="index.html#fondateurs">Fondateurs</a>
+    <a href="academy.html">Academy</a>
+    <a href="diagnostic.html" class="btn btn-primary" style="margin-top: 14px;">Parler de mon projet</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content: center;">Ingénierie de croissance</div>
+      <h1>La Méthode <span class="serif-italic">ACAS</span></h1>
+      <p>Un système structuré en 4 phases successives pour transformer la simple visibilité en revenus prévisibles et évolutifs.</p>
+
+      <!-- Tabs Nav -->
+      <div class="acas-tabs">
+        <button class="acas-tab-btn active" onclick="showPanel('analyse', this)"><span class="tab-num">01</span> Analyse</button>
+        <button class="acas-tab-btn" onclick="showPanel('construction', this)"><span class="tab-num">02</span> Construction</button>
+        <button class="acas-tab-btn" onclick="showPanel('activation', this)"><span class="tab-num">03</span> Activation</button>
+        <button class="acas-tab-btn" onclick="showPanel('scaling', this)"><span class="tab-num">04</span> Scaling</button>
+      </div>
+
+      <!-- PANEL 1: ANALYSE -->
+      <div class="acas-panel active" id="panel-analyse">
+        <div>
+          <div class="eyebrow">Phase 01</div>
+          <h2 class="panel-title">Audit & Analyse du Marché</h2>
+          <p class="panel-desc">Avant toute création de contenu ou campagne, nous identifions précisément les freins et opportunités de votre marché à Dakar et en Afrique de l'Ouest.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Audit d’écosystème :</strong> Analyse complète de votre positionnement actuel et de votre tunnel de conversion.</div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Étude de concurrence :</strong> Cartographie des acteurs dominants et des angles morts inexploités.</div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Analyse des cibles :</strong> Définition des buyers personas et de la psychologie d'achat locale.</div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="kpi-card">
+            <span class="kpi-badge">LIVRABLES CLÉS</span>
+            <h4>Rapport Diagnostic & Roadmap</h4>
+            <p style="color:var(--slate); font-size:14.5px; margin-bottom:16px;">Un document complet fixant les priorités stratégiques et la feuille de route budgétaire.</p>
+            <div style="font-family: 'Gellix', sans-serif; font-size:13px; color:var(--emerald);">Indicateur de succès : 100% de clarté sur le plan d'action</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2: CONSTRUCTION -->
+      <div class="acas-panel" id="panel-construction">
+        <div>
+          <div class="eyebrow">Phase 02</div>
+          <h2 class="panel-title">Architecture de Marque & Offres</h2>
+          <p class="panel-desc">Nous façonnons une identité mémorable et structurons votre proposition de valeur pour rendre votre offre irrésistible.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Charte visuelle & Ton :</strong> Univers visuel haut de gamme et ligne éditoriale captivante.</div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Tunnels de conversion :</strong> Landing pages et supports de présentation optimisés pour l'action.</div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Pack d'acquisition :</strong> Création des assets de marque nécessaires au déploiement.</div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="kpi-card">
+            <span class="kpi-badge">LIVRABLES CLÉS</span>
+            <h4>Brand Book & Assets digitaux</h4>
+            <p style="color:var(--slate); font-size:14.5px; margin-bottom:16px;">Identité visuelle prête à l'emploi et maquettes de tunnels validées.</p>
+            <div style="font-family: 'Gellix', sans-serif; font-size:13px; color:var(--emerald);">Indicateur de succès : Cohérence à 100% sur tous les canaux</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: ACTIVATION -->
+      <div class="acas-panel" id="panel-activation">
+        <div>
+          <div class="eyebrow">Phase 03</div>
+          <h2 class="panel-title">Acquisition & Déploiement</h2>
+          <p class="panel-desc">Lancement des campagnes média sponsorisées et publication de contenus à fort taux d'engagement.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Production de contenu :</strong> Vidéos courtes, visuels d'impact et rédaction d'annonces.</div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Achat média (Ads) :</strong> Gestion des budgets sur Meta Ads, Google Ads et TikTok Ads.</div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Animation de communauté :</strong> Gestion et qualification des messages entrants.</div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="kpi-card">
+            <span class="kpi-badge">LIVRABLES CLÉS</span>
+            <h4>Campagnes en direct & Flux de leads</h4>
+            <p style="color:var(--slate); font-size:14.5px; margin-bottom:16px;">Flux continu de demandes entrantes et rapports de performance hebdomadaires.</p>
+            <div style="font-family: 'Gellix', sans-serif; font-size:13px; color:var(--emerald);">Indicateur de succès : Coût par prospect (CPL) maîtrisé</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 4: SCALING -->
+      <div class="acas-panel" id="panel-scaling">
+        <div>
+          <div class="eyebrow">Phase 04</div>
+          <h2 class="panel-title">Optimisation & Scaling</h2>
+          <p class="panel-desc">Nous réinvestissons les données récoltées pour amplifier les budgets rentables et automatiser la conversion.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Automatisation CRM :</strong> Relances automatiques par WhatsApp & Emailing.</div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Retargeting avancé :</strong> Recapture des visiteurs n'ayant pas finalisé leur achat.</div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-bullet">&check;</div>
+              <div><strong>Optimisation ROI :</strong> Analyse du coût d'acquisition client (CAC) et hausse du panier moyen.</div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="kpi-card">
+            <span class="kpi-badge">LIVRABLES CLÉS</span>
+            <h4>Dashboard de croissance & CRM</h4>
+            <p style="color:var(--slate); font-size:14.5px; margin-bottom:16px;">Tableau de bord des ventes automatisé et système d'acquisition autonome.</p>
+            <div style="font-family: 'Gellix', sans-serif; font-size:13px; color:var(--emerald);">Indicateur de succès : Croissance mesurable du CA</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 40px;">
+        <a href="diagnostic.html" class="btn btn-primary">Appliquer la méthode à mon entreprise &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================
+       FOOTER UNIFIÉ BRANDOSPHÈRE
+       ================================================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <!-- Col 1: Marque -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" style="height: 30px; width: auto; margin-bottom: 14px;">
+          </div>
+          <p class="footer-brand-desc">Écosystème de croissance digitale à Dakar. On transforme votre visibilité en chiffre d'affaires mesurable.</p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col-nav">
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="methode.html">Méthode ACAS</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="histoire.html">Notre Histoire</a></li>
+            <li><a href="academy.html">Academy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Expertises -->
+        <div class="footer-col-exp">
+          <div class="footer-col-title">Expertises</div>
+          <ul class="footer-links">
+            <li><a href="services.html#strategie">Stratégie & Conseil</a></li>
+            <li><a href="services.html#branding">Branding & Design</a></li>
+            <li><a href="services.html#video">Production Vidéo</a></li>
+            <li><a href="services.html#ads">Publicité Digitale (Ads)</a></li>
+            <li><a href="services.html#dev">Développement & Tunnels</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-col-contact">
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-list">
+            <div>Dakar, Sénégal</div>
+            <div>hello@brandosphere.co</div>
+            <div><a href="diagnostic.html" style="color:var(--beige-poudre); text-decoration:none; font-weight:600;">Prendre rendez-vous &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barre du bas -->
+      <div class="footer-bottom" style="display: flex; justify-content: center; text-align: center;">
+        <div>© 2026 BRANDOSPHÈRE · Tous droits réservés</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showPanel(panelId, btn) {
+      document.querySelectorAll('.acas-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.acas-tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + panelId).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+
+
+  <div id="scroll-progress"></div>
+  <script>
+    // 1. Scroll Progress Bar Update
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) progressBar.style.width = scrolled + '%';
+    });
+
+    // 2. Mobile Drawer Toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    if (menuBtn && drawer) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('open');
+        drawer.classList.toggle('open');
+      });
+      drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('open');
+          drawer.classList.remove('open');
+        });
+      });
+    }
+
+    // 3. IntersectionObserver Smooth Reveal
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const revealElements = document.querySelectorAll('h1, h2, h3, .problem-card-box, .service-card, .method-step-card, .fondateur-card, .stat-card, .pack-card, .diag-step-card, .hero-content, .hero-buttons, .acas-step-detailed');
+      revealElements.forEach(el => {
+        el.classList.add('reveal-up');
+        observer.observe(el);
+      });
+
+      // 4. GSAP smooth animations if GSAP is present
+      if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.navbar', { y: -50, opacity: 0, duration: 1, ease: 'power3.out' });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRANDOSPHÈRE Academy — Accélérateur de Talents Digitaux à Dakar</title>
+  <meta name="description" content="BRANDOSPHÈRE Academy forme les créateurs de contenu, designers et stratèges digitaux d'élite à Dakar. 100% pratique sur cas réels avec placement professionnel.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --marron-dominant: #500A1E;
+      --marron-deep: #21030B;
+      --marron-card: #2E0511;
+      --marron-elevated: #3E0717;
+      --beige-poudre: #FBD8B5;
+      --beige-hover: #F7C79D;
+      --beige-light: #FFF5EC;
+      --cream: #FFF5EC;
+      --slate: #E4C7AC;
+      --slate-2: #B89B80;
+      --line: rgba(251, 216, 181, 0.16);
+      --line-strong: rgba(251, 216, 181, 0.28);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--marron-deep);
+      color: var(--cream);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--marron-deep);
+      color: var(--cream);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* SVG Noise Overlay */
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+    }
+
+    /* Ambient Glows */
+    .bg-glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.22;
+    }
+
+    /* Scroll Progress */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FBD8B5, #FFE4CB);
+      z-index: 10001;
+      width: 0%;
+      box-shadow: 0 0 12px rgba(251, 216, 181, 0.8);
+    }
+
+    /* Eyebrows & Badges */
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      background: rgba(251, 216, 181, 0.06);
+      border: 1px solid rgba(251, 216, 181, 0.18);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--beige-poudre);
+      box-shadow: 0 0 8px var(--beige-poudre);
+      animation: pulse-soft 2s infinite ease-in-out;
+    }
+    @keyframes pulse-soft {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+    }
+
+    .serif-italic {
+      font-family: 'Instrument Serif', 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--beige-poudre);
+      font-weight: 400;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14.5px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--beige-poudre);
+      color: var(--marron-dominant);
+      border-color: var(--beige-poudre);
+      box-shadow: 0 4px 16px rgba(251, 216, 181, 0.25);
+    }
+    .btn-primary:hover {
+      background-color: var(--beige-hover);
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 0 10px 24px rgba(251, 216, 181, 0.35);
+    }
+
+    .btn-ghost {
+      background: rgba(251, 216, 181, 0.06);
+      color: var(--cream);
+      border-color: rgba(251, 216, 181, 0.22);
+    }
+    .btn-ghost:hover {
+      background: rgba(251, 216, 181, 0.14);
+      border-color: var(--beige-poudre);
+      color: var(--beige-poudre);
+      transform: translateY(-2px);
+    }
+
+    /* ==================================================
+       NAVBAR (Fixed Floating Pill - Zero Wrap)
+       ================================================== */
+    .navbar {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 1140px;
+      z-index: 1000;
+      height: 64px;
+      background: rgba(43, 4, 15, 0.86);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(251, 216, 181, 0.22);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(251, 216, 181, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-img {
+      height: 30px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--slate);
+      padding: 7px 14px;
+      border-radius: 9999px;
+      transition: all 0.25s ease;
+      white-space: nowrap !important;
+      display: inline-block;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--marron-dominant);
+      background-color: var(--beige-poudre);
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(251, 216, 181, 0.3);
+    }
+
+    .nav-cta-wrap {
+      flex-shrink: 0;
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(251, 216, 181, 0.2);
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1002;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--beige-poudre);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-btn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(33, 3, 11, 0.96);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 24px;
+      transform: translateY(-100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mobile-drawer a {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--cream);
+      padding: 10px 24px;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .mobile-drawer a.active,
+    .mobile-drawer a:hover {
+      color: var(--marron-dominant);
+      background-color: var(--beige-poudre);
+    }
+
+    @media (max-width: 960px) {
+      .nav-links, .nav-cta-wrap {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: flex !important;
+      }
+      .navbar {
+        height: 56px;
+        padding: 0 16px;
+        top: 12px;
+        width: calc(100% - 24px);
+      }
+      .nav-logo-img {
+        height: 26px;
+      }
+    }
+
+    /* ==================================================
+       HERO ACADEMY
+       ================================================== */
+    .academy-hero {
+      padding: 160px 0 70px;
+      text-align: center;
+      position: relative;
+    }
+
+    .academy-hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 24px 0 20px;
+      color: var(--cream);
+    }
+
+    .academy-hero p {
+      font-size: clamp(17px, 2.2vw, 20px);
+      color: var(--slate);
+      max-width: 760px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    /* Superposed Academy Hero Buttons (Empilés verticalement, centrés) */
+    .academy-hero-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .academy-hero-buttons .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 15px 28px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    /* ==================================================
+       METRICS BANNER
+       ================================================== */
+    .stats-banner {
+      background: linear-gradient(135deg, rgba(80, 10, 30, 0.55), rgba(43, 4, 15, 0.75));
+      border: 1px solid var(--line-strong);
+      border-radius: 28px;
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+      margin-bottom: 90px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    .stat-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(34px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--beige-poudre);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-lbl {
+      color: var(--slate);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 860px) {
+      .stats-banner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 30px 24px;
+      }
+    }
+    @media (max-width: 480px) {
+      .stats-banner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==================================================
+       FORMATIONS GRID (16:9 FORMAT IMAGES)
+       ================================================== */
+    .formations-section {
+      margin-bottom: 110px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 800;
+      color: var(--cream);
+      margin: 16px 0 12px;
+    }
+
+    .section-header p {
+      color: var(--slate);
+      font-size: 17px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .formations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .formation-card {
+      background: rgba(43, 5, 14, 0.55);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .formation-card:hover {
+      border-color: rgba(251, 216, 181, 0.38);
+      transform: translateY(-5px);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    /* 16:9 Format YouTube Image Container */
+    .formation-media-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      background: #140206;
+    }
+
+    .formation-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .formation-card:hover .formation-media-box img {
+      transform: scale(1.05);
+    }
+
+    .formation-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(33, 3, 11, 0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(251, 216, 181, 0.25);
+      color: var(--beige-poudre);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 9999px;
+    }
+
+    .formation-duration-badge {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(33, 3, 11, 0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(251, 216, 181, 0.25);
+      color: var(--cream);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 9999px;
+    }
+
+    .formation-content {
+      padding: 32px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .formation-content h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .formation-desc {
+      font-size: 15px;
+      color: var(--slate);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .formation-modules {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 26px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .formation-module-item {
+      font-size: 13.5px;
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .module-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--beige-poudre);
+      flex-shrink: 0;
+    }
+
+    .formation-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    .formation-footer .btn {
+      margin: 0 auto;
+      padding: 12px 36px;
+      font-size: 14.5px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @media (max-width: 840px) {
+      .formations-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==================================================
+       PEDAGOGY SECTION (DESIGN ÉDITORIAL LUXE & ÉLEVÉ)
+       ================================================== */
+    .pedagogy-section {
+      background: linear-gradient(135deg, rgba(80, 10, 30, 0.45), rgba(43, 4, 15, 0.7));
+      border: 1px solid var(--line-strong);
+      border-radius: 36px;
+      padding: clamp(40px, 6vw, 68px) clamp(24px, 4vw, 48px);
+      margin-bottom: 110px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pedagogy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .pedagogy-card {
+      background: linear-gradient(135deg, rgba(33, 3, 11, 0.7), rgba(20, 2, 7, 0.85));
+      border: 1px solid rgba(251, 216, 181, 0.16);
+      border-radius: 26px;
+      padding: 36px 28px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pedagogy-card:hover {
+      border-color: rgba(251, 216, 181, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    }
+
+    .pedagogy-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .pedagogy-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      background: rgba(251, 216, 181, 0.08);
+      border: 1px solid rgba(251, 216, 181, 0.2);
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    .pedagogy-watermark {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 46px;
+      color: rgba(251, 216, 181, 0.12);
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .pedagogy-card h3 {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 12px;
+      line-height: 1.25;
+      font-family: 'Gellix', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .pedagogy-card p {
+      font-size: 15px;
+      color: var(--slate);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    @media (max-width: 860px) {
+      .pedagogy-grid {
+        grid-template-columns: 1fr;
+      }
+      .pedagogy-section {
+        padding: 40px 24px;
+      }
+    }
+
+    /* ==================================================
+       APPLY BOX
+       ================================================== */
+    .apply-section {
+      background: linear-gradient(135deg, #500A1E, #2B040F);
+      border: 1px solid var(--line-strong);
+      border-radius: 36px;
+      padding: 60px 36px;
+      text-align: center;
+      margin-bottom: 100px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .apply-section h2 {
+      font-size: clamp(32px, 4.8vw, 50px);
+      font-weight: 800;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+
+    .apply-section p {
+      font-size: 17.5px;
+      color: var(--slate);
+      max-width: 640px;
+      margin: 0 auto 34px;
+    }
+
+    /* ====================================================
+       FOOTER BRANDOSPHÈRE (COMPOSANT UNIFIÉ LANDING PAGE)
+       ================================================== */
+    .footer {
+      background: linear-gradient(180deg, #580B22 0%, #380614 100%) !important;
+      border-radius: 44px 44px 0 0 !important;
+      max-width: 1240px !important;
+      width: calc(100% - 32px) !important;
+      margin: 48px auto 0 auto !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      border-bottom: none !important;
+      padding: 70px 0 40px !important;
+      position: relative;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-desc {
+      color: var(--slate);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14.5px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--beige-poudre);
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--slate);
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(251, 216, 181, 0.18);
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: var(--slate);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        border-radius: 32px 32px 0 0 !important;
+        width: calc(100% - 20px) !important;
+        margin: 24px auto 0 auto !important;
+        padding: 50px 0 30px !important;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+      .footer-brand-header {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-bottom: 12px !important;
+      }
+      .footer-brand-header img {
+        margin: 0 auto !important;
+        display: block !important;
+        height: 32px !important;
+        width: auto !important;
+      }
+      .footer-brand-desc {
+        text-align: center !important;
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        margin: 0 auto !important;
+      }
+      .footer-col-nav, .footer-col-exp, .footer-col-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .footer-links {
+        align-items: center !important;
+      }
+      .footer-bottom {
+        text-align: center !important;
+        justify-content: center !important;
+        padding-top: 24px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Noise Overlay -->
+  <svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+  </svg>
+
+  <!-- Ambient Glows -->
+  <div class="bg-glow-orb" style="top: 8%; left: 5%; width: 500px; height: 500px; background: #500A1E;"></div>
+  <div class="bg-glow-orb" style="top: 45%; right: 5%; width: 450px; height: 450px; background: #500A1E;"></div>
+
+  <!-- ==================================================
+       NAVBAR (Fixed Floating Pill - 100% Responsive)
+       ================================================== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="nav-brand" aria-label="BRANDOSPHÈRE Accueil">
+        <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" class="nav-logo-img">
+      </a>
+
+      <!-- Desktop Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#methode">Méthode</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="histoire.html">Notre Histoire</a></li>
+          <li><a href="index.html#fondateurs">Fondateurs</a></li>
+          <li><a href="academy.html" class="active">Academy</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <div class="nav-cta-wrap">
+        <a href="diagnostic.html" class="btn btn-primary">Parler de mon projet</a>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#methode">Méthode</a>
+    <a href="index.html#services">Services</a>
+    <a href="histoire.html">Notre Histoire</a>
+    <a href="index.html#fondateurs">Fondateurs</a>
+    <a href="academy.html" class="active">Academy</a>
+    <a href="diagnostic.html" class="btn btn-primary" style="margin-top: 14px;">Parler de mon projet</a>
+  </div>
+
+  <main>
+    <!-- ==================================================
+         HERO ACADEMY
+         ================================================== -->
+    <section class="academy-hero">
+      <div class="wrap">
+        <h1>BRANDOSPHÈRE <span class="serif-italic">Academy</span></h1>
+        <p>Former la prochaine génération de créateurs de contenu, designers et stratèges de croissance à Dakar. Un apprentissage 100% immersif, sans théorie inutile, axé sur les résultats réels du marché.</p>
+        
+        <div class="academy-hero-buttons">
+          <a href="#formations" class="btn btn-primary">Découvrir les formations &rarr;</a>
+          <a href="candidature.html" class="btn btn-ghost">Déposer une candidature</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <!-- ==================================================
+           STATS BANNER
+           ================================================== -->
+      <div class="stats-banner">
+        <div>
+          <div class="stat-val">+250</div>
+          <div class="stat-lbl">Talents formés à Dakar</div>
+        </div>
+        <div>
+          <div class="stat-val">95%</div>
+          <div class="stat-lbl">Taux d'insertion & missions pro</div>
+        </div>
+        <div>
+          <div class="stat-val">100%</div>
+          <div class="stat-lbl">Pratique sur cas réels d'entreprises</div>
+        </div>
+        <div>
+          <div class="stat-val">4.9/5</div>
+          <div class="stat-lbl">Satisfaction moyenne des apprenants</div>
+        </div>
+      </div>
+
+      <!-- ==================================================
+           FORMATIONS SECTION (16:9 IMAGES)
+           ================================================== -->
+      <section id="formations" class="formations-section">
+        <div class="section-header">
+          <h2>Des cursus conçus pour <span class="serif-italic">les métiers qui recrutent.</span></h2>
+          <p>Chaque formation est pilotée par des experts du terrain et vous confronte aux exigences des vraies entreprises partenaires de BRANDOSPHÈRE.</p>
+        </div>
+
+        <div class="formations-grid">
+          <!-- Formation 1 -->
+          <article class="formation-card">
+            <div class="formation-media-box">
+              <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop" alt="Création de contenu vidéo et montage">
+              <span class="formation-duration-badge">6 Semaines · Intensif</span>
+            </div>
+            <div class="formation-content">
+              <div>
+                <h3>Création de Contenu Vidéo & Storytelling Mobile</h3>
+                <p class="formation-desc">Maîtrisez la production vidéo de bout en bout : écriture de scripts qui accrochent, cadrage smartphone & caméra pro, éclairage studio et montage ultra-dynamique sur CapCut & Premiere Pro.</p>
+                
+                <ul class="formation-modules">
+                  <li class="formation-module-item"><span class="module-dot"></span> Écriture de scripts & formats viraux (Reels, TikTok, Shorts)</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Tournage studio, éclairage 3 points et prise de son</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Montage dynamique, sound design et rétention d'audience</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Projet final : spot vidéo complet pour une marque partenaire</li>
+                </ul>
+              </div>
+
+              <div class="formation-footer">
+                <a href="candidature.html?formation=video" class="btn btn-primary">Candidater &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Formation 2 -->
+          <article class="formation-card">
+            <div class="formation-media-box">
+              <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" alt="Brand design et direction artistique">
+              <span class="formation-duration-badge">8 Semaines · Immersion</span>
+            </div>
+            <div class="formation-content">
+              <div>
+                <h3>Brand Design & Direction Artistique</h3>
+                <p class="formation-desc">Apprenez à forger des identités de marque mémorables et luxueuses. De la recherche de concept à la charte graphique complète, apprenez à concevoir des visuels qui valorisent les entreprises.</p>
+                
+                <ul class="formation-modules">
+                  <li class="formation-module-item"><span class="module-dot"></span> Typographie, colorimétrie et psychologie des formes</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Maîtrise avancée d'Illustrator, Photoshop et Figma</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Création de guidelines et déclinaisons print / web</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Projet final : refonte complète de marque avec jury pro</li>
+                </ul>
+              </div>
+
+              <div class="formation-footer">
+                <a href="candidature.html?formation=design" class="btn btn-primary">Candidater &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Formation 3 -->
+          <article class="formation-card">
+            <div class="formation-media-box">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Growth Marketing et Media Buying">
+              <span class="formation-duration-badge">6 Semaines · Pratique</span>
+            </div>
+            <div class="formation-content">
+              <div>
+                <h3>Growth Marketing & Achat Média (Meta, Google, TikTok Ads)</h3>
+                <p class="formation-desc">Devenez un expert recherché de l'acquisition payante. Apprenez à configurer des campagnes publicitaires rentables, calculer le retour sur investissement (ROAS) et optimiser des budgets réels.</p>
+                
+                <ul class="formation-modules">
+                  <li class="formation-module-item"><span class="module-dot"></span> Meta Ads Manager & Google Ads de A à Z</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Ciblage d'audience en Afrique & international</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> A/B Testing créatif, copywriting persuasif et tracking</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Budget publicitaire réel alloué pour vos tests</li>
+                </ul>
+              </div>
+
+              <div class="formation-footer">
+                <a href="candidature.html?formation=growth" class="btn btn-primary">Candidater &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Formation 4 -->
+          <article class="formation-card">
+            <div class="formation-media-box">
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop" alt="Social Media Management et Influence">
+              <span class="formation-duration-badge">6 Semaines · Pro</span>
+            </div>
+            <div class="formation-content">
+              <div>
+                <h3>Social Media Management & Stratégie d'Influence</h3>
+                <p class="formation-desc">Transformez les réseaux sociaux en canal d'acquisition commercial. Apprenez à construire un calendrier éditorial stratégique, animer une communauté engagée et négocier des partenariats influenceurs.</p>
+                
+                <ul class="formation-modules">
+                  <li class="formation-module-item"><span class="module-dot"></span> Stratégie éditoriale et piliers de contenu à Dakar</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Gestion de crise et modération des interactions</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Collaboration créateurs et influenceurs ouest-africains</li>
+                  <li class="formation-module-item"><span class="module-dot"></span> Reporting de performance et présentation client</li>
+                </ul>
+              </div>
+
+              <div class="formation-footer">
+                <a href="candidature.html?formation=social" class="btn btn-primary">Candidater &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           PEDAGOGY SECTION (DESIGN ÉDITORIAL)
+           ================================================== -->
+      <section class="pedagogy-section">
+        <div class="section-header" style="margin-bottom: 0;">
+          <h2>Pourquoi l'Academy <span class="serif-italic">est différente.</span></h2>
+          <p>Pas de cours magistraux ennuyeux. Vous apprenez en faisant, encadré par des praticiens qui gèrent quotidiennement les campagnes des plus grandes marques.</p>
+        </div>
+
+        <div class="pedagogy-grid">
+          <div class="pedagogy-card">
+            <div class="pedagogy-card-header">
+              <span class="pedagogy-num">IMMERSION RÉELLE</span>
+              <span class="pedagogy-watermark">01</span>
+            </div>
+            <h3>Travail sur cas réels d'entreprises</h3>
+            <p>Dès la deuxième semaine, vous appliquez vos compétences sur les problématiques réelles de marques partenaires à Dakar. Vos productions sont concrètement publiées, testées et mesurées.</p>
+          </div>
+
+          <div class="pedagogy-card">
+            <div class="pedagogy-card-header">
+              <span class="pedagogy-num">MENTORAT DIRECT</span>
+              <span class="pedagogy-watermark">02</span>
+            </div>
+            <h3>Accompagnement par les experts</h3>
+            <p>Effectifs limités à 15 apprenants par promotion pour garantir des retours personnalisés sur chaque livrable et un suivi hebdomadaire sur votre montée en compétences commerciale et créative.</p>
+          </div>
+
+          <div class="pedagogy-card">
+            <div class="pedagogy-card-header">
+              <span class="pedagogy-num">INSERTION & RÉSEAU</span>
+              <span class="pedagogy-watermark">03</span>
+            </div>
+            <h3>Tremplin vers le marché pro</h3>
+            <p>Les meilleurs talents de chaque promotion sont directement intégrés dans l'écosystème BRANDOSPHÈRE ou recommandés auprès de notre réseau de clients et partenaires ouest-africains.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           APPLY / CANDIDATURE SECTION
+           ================================================== -->
+      <div id="candidater" class="apply-section">
+        <h2>Rejoignez la prochaine <span class="serif-italic">promotion</span></h2>
+        <p>Les places par session sont strictement limitées à 15 participants afin de préserver l'excellence pédagogique et l'accompagnement individuel. Déposez votre candidature pour échanger avec notre équipe d'admission.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="candidature.html" class="btn btn-primary" style="padding: 15px 32px; font-size: 15.5px;">Déposer ma candidature &rarr;</a>
+          <a href="diagnostic.html" class="btn btn-ghost" style="padding: 15px 32px; font-size: 15.5px;">Parler de votre projet</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ====================================================
+       FOOTER UNIFIÉ BRANDOSPHÈRE
+       ================================================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <!-- Col 1: Marque -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" style="height: 30px; width: auto; margin-bottom: 14px;">
+          </div>
+          <p class="footer-brand-desc">Écosystème de croissance digitale à Dakar. On transforme votre visibilité en chiffre d'affaires mesurable.</p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col-nav">
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="methode.html">Méthode ACAS</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="histoire.html">Notre Histoire</a></li>
+            <li><a href="academy.html">Academy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Expertises -->
+        <div class="footer-col-exp">
+          <div class="footer-col-title">Expertises</div>
+          <ul class="footer-links">
+            <li><a href="services.html#strategie">Stratégie & Conseil</a></li>
+            <li><a href="services.html#branding">Branding & Design</a></li>
+            <li><a href="services.html#video">Production Vidéo</a></li>
+            <li><a href="services.html#ads">Publicité Digitale (Ads)</a></li>
+            <li><a href="services.html#dev">Développement & Tunnels</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-col-contact">
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-list">
+            <div>Dakar, Sénégal</div>
+            <div>hello@brandosphere.co</div>
+            <div><a href="diagnostic.html" style="color:var(--beige-poudre); text-decoration:none; font-weight:600;">Prendre rendez-vous &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barre du bas -->
+      <div class="footer-bottom" style="display: flex; justify-content: center; text-align: center;">
+        <div>© 2026 BRANDOSPHÈRE · Tous droits réservés</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('scroll-progress');
+      if (bar) bar.style.width = scrolled + '%';
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    if (menuBtn && drawer) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('open');
+        drawer.classList.toggle('open');
+      });
+      drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('open');
+          drawer.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Histoire — BRANDOSPHÈRE Dakar</title>
+  <meta name="description" content="Découvrez la genèse de BRANDOSPHÈRE : pourquoi nous avons créé un écosystème de croissance digitale à Dakar pour transformer la visibilité en chiffre d'affaires.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --marron-dominant: #500A1E;
+      --marron-deep: #21030B;
+      --marron-card: #2E0511;
+      --marron-elevated: #3E0717;
+      --beige-poudre: #FBD8B5;
+      --beige-hover: #F7C79D;
+      --beige-light: #FFF5EC;
+      --cream: #FFF5EC;
+      --slate: #E4C7AC;
+      --slate-2: #B89B80;
+      --line: rgba(251, 216, 181, 0.16);
+      --line-strong: rgba(251, 216, 181, 0.28);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--marron-deep);
+      color: var(--cream);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--marron-deep);
+      color: var(--cream);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* SVG Noise Overlay */
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+    }
+
+    /* Ambient Glows */
+    .bg-glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.22;
+    }
+
+    /* Scroll Progress */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FBD8B5, #FFE4CB);
+      z-index: 10001;
+      width: 0%;
+      box-shadow: 0 0 12px rgba(251, 216, 181, 0.8);
+    }
+
+    /* Eyebrows & Badges */
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      background: rgba(251, 216, 181, 0.06);
+      border: 1px solid rgba(251, 216, 181, 0.18);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--beige-poudre);
+      box-shadow: 0 0 8px var(--beige-poudre);
+      animation: pulse-soft 2s infinite ease-in-out;
+    }
+    @keyframes pulse-soft {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+    }
+
+    .serif-italic {
+      font-family: 'Instrument Serif', 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--beige-poudre);
+      font-weight: 400;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14.5px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--beige-poudre);
+      color: var(--marron-dominant);
+      border-color: var(--beige-poudre);
+      box-shadow: 0 4px 16px rgba(251, 216, 181, 0.25);
+    }
+    .btn-primary:hover {
+      background-color: var(--beige-hover);
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 0 10px 24px rgba(251, 216, 181, 0.35);
+    }
+
+    .btn-ghost {
+      background: rgba(251, 216, 181, 0.06);
+      color: var(--cream);
+      border-color: rgba(251, 216, 181, 0.22);
+    }
+    .btn-ghost:hover {
+      background: rgba(251, 216, 181, 0.14);
+      border-color: var(--beige-poudre);
+      color: var(--beige-poudre);
+      transform: translateY(-2px);
+    }
+
+    /* ==================================================
+       NAVBAR (Fixed Floating Pill - Zero Wrap)
+       ================================================== */
+    .navbar {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 1140px;
+      z-index: 1000;
+      height: 64px;
+      background: rgba(43, 4, 15, 0.86);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(251, 216, 181, 0.22);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(251, 216, 181, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-img {
+      height: 30px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--slate);
+      padding: 7px 14px;
+      border-radius: 9999px;
+      transition: all 0.25s ease;
+      white-space: nowrap !important;
+      display: inline-block;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--marron-dominant);
+      background-color: var(--beige-poudre);
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(251, 216, 181, 0.3);
+    }
+
+    .nav-cta-wrap {
+      flex-shrink: 0;
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(251, 216, 181, 0.2);
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1002;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--beige-poudre);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-btn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(33, 3, 11, 0.96);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 24px;
+      transform: translateY(-100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mobile-drawer a {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--cream);
+      padding: 10px 24px;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .mobile-drawer a.active,
+    .mobile-drawer a:hover {
+      color: var(--marron-dominant);
+      background-color: var(--beige-poudre);
+    }
+
+    @media (max-width: 960px) {
+      .nav-links, .nav-cta-wrap {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: flex !important;
+      }
+      .navbar {
+        height: 56px;
+        padding: 0 16px;
+        top: 12px;
+        width: calc(100% - 24px);
+      }
+      .nav-logo-img {
+        height: 26px;
+      }
+    }
+
+    /* ==================================================
+       HERO STORY
+       ================================================== */
+    .story-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+      position: relative;
+    }
+
+    .story-hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 24px 0 20px;
+      color: var(--cream);
+    }
+
+    .story-hero p {
+      font-size: clamp(17px, 2.2vw, 20px);
+      color: var(--slate);
+      max-width: 740px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    /* Superposed Hero Buttons (Empilés verticalement, jamais côte à côte) */
+    .story-hero-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      max-width: 330px;
+      margin: 0 auto;
+    }
+
+    .story-hero-buttons .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 15px 28px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    /* Story Manifesto Quote Banner (Hautement Responsive) */
+    .story-manifesto-banner {
+      background: linear-gradient(135deg, rgba(80, 10, 30, 0.7), rgba(43, 4, 15, 0.9));
+      border: 1px solid var(--line-strong);
+      border-radius: 28px;
+      padding: clamp(34px, 5vw, 52px) clamp(20px, 4vw, 44px);
+      margin-bottom: 90px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-manifesto-banner::before {
+      content: '“';
+      position: absolute;
+      top: -30px;
+      left: 24px;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(100px, 14vw, 160px);
+      color: rgba(251, 216, 181, 0.08);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .story-manifesto-quote {
+      font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(21px, 3.4vw, 35px);
+      color: var(--beige-poudre);
+      line-height: 1.35;
+      max-width: 860px;
+      margin: 0 auto 18px;
+    }
+
+    .story-manifesto-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+
+    .manifesto-pill {
+      background: rgba(251, 216, 181, 0.12);
+      color: var(--beige-poudre);
+      border: 1px solid rgba(251, 216, 181, 0.25);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    /* ==================================================
+       CHAPTERS TIMELINE (NOUVEAU DESIGN CAPTIVANT & ÉDITORIAL)
+       ================================================== */
+    .story-chapters {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      margin-bottom: 110px;
+    }
+
+    .story-chapter {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 48px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(43, 5, 14, 0.65), rgba(27, 4, 15, 0.85));
+      border: 1px solid rgba(251, 216, 181, 0.16);
+      border-radius: 32px;
+      padding: 48px;
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .story-chapter:hover {
+      border-color: rgba(251, 216, 181, 0.4);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      transform: translateY(-3px);
+    }
+
+    .story-chapter.reversed {
+      grid-template-columns: 1fr 1.15fr;
+      direction: rtl;
+    }
+    .story-chapter.reversed > * {
+      direction: ltr;
+    }
+
+    /* Watermark architectural d'arrière-plan */
+    .chapter-watermark {
+      position: absolute;
+      top: 10px;
+      right: 32px;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(100px, 14vw, 170px);
+      font-weight: 700;
+      color: rgba(251, 216, 181, 0.04);
+      line-height: 0.9;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .story-chapter.reversed .chapter-watermark {
+      right: auto;
+      left: 32px;
+    }
+
+    .chapter-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Chapter Meta Breadcrumb */
+    .chapter-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .chapter-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #1A0309;
+      background: var(--beige-poudre);
+      padding: 4px 12px;
+      border-radius: 100px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .chapter-line {
+      width: 28px;
+      height: 1px;
+      background: rgba(251, 216, 181, 0.35);
+    }
+
+    .chapter-phase {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      opacity: 0.85;
+    }
+
+    .chapter-title {
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--cream);
+      margin-bottom: 18px;
+    }
+
+    .chapter-body p {
+      font-size: 15.5px;
+      color: var(--slate);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .chapter-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Key Insight Callout */
+    .chapter-insight {
+      background: rgba(251, 216, 181, 0.05);
+      border-left: 3px solid var(--beige-poudre);
+      border-radius: 0 16px 16px 0;
+      padding: 14px 18px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #E8D7C8;
+      line-height: 1.55;
+    }
+
+    .chapter-insight strong {
+      color: var(--beige-poudre);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Chapter Media Box */
+    .chapter-media {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(251, 216, 181, 0.18);
+      z-index: 1;
+    }
+
+    .chapter-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .story-chapter:hover .chapter-media img {
+      transform: scale(1.05);
+    }
+
+    .chapter-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27, 4, 15, 0.75) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .chapter-media-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(27, 4, 15, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(251, 216, 181, 0.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--beige-poudre);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    @media (max-width: 860px) {
+      .story-chapter,
+      .story-chapter.reversed {
+        grid-template-columns: 1fr;
+        padding: 32px 22px;
+        gap: 28px;
+        direction: ltr !important;
+      }
+      .chapter-media {
+        aspect-ratio: 16 / 10;
+      }
+      .chapter-watermark {
+        font-size: 90px;
+        top: 6px;
+        right: 16px !important;
+        left: auto !important;
+      }
+    }
+
+    /* ==================================================
+       PILOTES DU SYSTÈME (FOUNDERS EXECUTIVE SPOTLIGHT)
+       ================================================== */
+    .founders-section {
+      margin-bottom: 110px;
+      text-align: center;
+    }
+
+    .pilotes-main-title {
+      font-size: clamp(34px, 5.2vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+      margin: 16px 0 10px;
+      line-height: 1.1;
+    }
+
+    .pilotes-subtitle {
+      font-size: clamp(20px, 3.2vw, 30px);
+      color: var(--beige-poudre);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .pilotes-desc {
+      color: var(--slate);
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-size: 16.5px;
+      line-height: 1.6;
+    }
+
+    .founders-duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      text-align: left;
+    }
+
+    .founder-duo-card-dark {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      background: linear-gradient(135deg, rgba(43, 5, 14, 0.7), rgba(27, 4, 15, 0.9));
+      border: 1px solid rgba(251, 216, 181, 0.18);
+      border-radius: 28px;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .founder-duo-card-dark:hover {
+      border-color: rgba(251, 216, 181, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.5);
+    }
+
+    .founder-duo-photo-box {
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+    }
+
+    .founder-duo-photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .founder-duo-card-dark:hover .founder-duo-photo-box img {
+      transform: scale(1.05);
+    }
+
+    .founder-duo-body-dark {
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .founder-duo-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
+
+    .founder-duo-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .founder-duo-role {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--beige-poudre);
+      margin-bottom: 14px;
+    }
+
+    .founder-duo-bio {
+      font-size: 14.5px;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .founder-duo-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .founder-duo-tags span {
+      background: rgba(251, 216, 181, 0.08);
+      border: 1px solid rgba(251, 216, 181, 0.16);
+      border-radius: 100px;
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      color: var(--beige-poudre);
+    }
+
+    @media (max-width: 990px) {
+      .founders-duo-grid {
+        grid-template-columns: 1fr;
+      }
+      .founder-duo-card-dark {
+        grid-template-columns: 200px 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .founder-duo-card-dark {
+        grid-template-columns: 1fr;
+      }
+      .founder-duo-photo-box {
+        height: 280px;
+      }
+      .founder-duo-body-dark {
+        padding: 24px 20px;
+      }
+    }
+
+    /* ==================================================
+       CTA SECTION (STRICTEMENT 2 LIGNES)
+       ================================================== */
+    .story-cta {
+      background: linear-gradient(135deg, #500A1E, #2B040F);
+      border: 1px solid var(--line-strong);
+      border-radius: 36px;
+      padding: clamp(40px, 6vw, 68px) clamp(20px, 4vw, 40px);
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      margin-bottom: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-cta-title {
+      font-size: clamp(22px, 3.8vw, 44px);
+      font-weight: 800;
+      color: var(--cream);
+      line-height: 1.22;
+      margin: 0 auto 18px;
+      max-width: 820px;
+    }
+
+    .story-cta-title .cta-line-1,
+    .story-cta-title .cta-line-2 {
+      display: block;
+    }
+
+    @media (max-width: 520px) {
+      .story-cta-title {
+        font-size: clamp(17px, 5vw, 23px);
+        line-height: 1.25;
+      }
+    }
+
+    .story-cta p {
+      font-size: 17.5px;
+      color: var(--slate);
+      max-width: 620px;
+      margin: 0 auto 34px;
+    }
+
+    /* ==================================================
+       FOOTER
+    /* ====================================================
+       FOOTER BRANDOSPHÈRE (COMPOSANT UNIFIÉ LANDING PAGE)
+       ================================================== */
+    .footer {
+      background: linear-gradient(180deg, #580B22 0%, #380614 100%) !important;
+      border-radius: 44px 44px 0 0 !important;
+      max-width: 1240px !important;
+      width: calc(100% - 32px) !important;
+      margin: 48px auto 0 auto !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      border-bottom: none !important;
+      padding: 70px 0 40px !important;
+      position: relative;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-desc {
+      color: var(--slate);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14.5px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--beige-poudre);
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--slate);
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(251, 216, 181, 0.18);
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: var(--slate);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        border-radius: 32px 32px 0 0 !important;
+        width: calc(100% - 20px) !important;
+        margin: 24px auto 0 auto !important;
+        padding: 50px 0 30px !important;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+      .footer-brand-header {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-bottom: 12px !important;
+      }
+      .footer-brand-header img {
+        margin: 0 auto !important;
+        display: block !important;
+        height: 32px !important;
+        width: auto !important;
+      }
+      .footer-brand-desc {
+        text-align: center !important;
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        margin: 0 auto !important;
+      }
+      .footer-col-nav, .footer-col-exp, .footer-col-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .footer-links {
+        align-items: center !important;
+      }
+      .footer-bottom {
+        text-align: center !important;
+        justify-content: center !important;
+        padding-top: 24px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Noise Overlay -->
+  <svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+  </svg>
+
+  <!-- Ambient Glows -->
+  <div class="bg-glow-orb" style="top: 10%; left: 5%; width: 500px; height: 500px; background: #500A1E;"></div>
+  <div class="bg-glow-orb" style="top: 45%; right: 5%; width: 450px; height: 450px; background: #500A1E;"></div>
+
+  <!-- ==================================================
+       NAVBAR (Sticky Floating Pill - 100% Responsive)
+       ================================================== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="nav-brand" aria-label="BRANDOSPHÈRE Accueil">
+        <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" class="nav-logo-img">
+      </a>
+
+      <!-- Desktop Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#methode">Méthode</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="histoire.html" class="active">Notre Histoire</a></li>
+          <li><a href="index.html#fondateurs">Fondateurs</a></li>
+          <li><a href="academy.html">Academy</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <div class="nav-cta-wrap">
+        <a href="diagnostic.html" class="btn btn-primary">Parler de mon projet</a>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#methode">Méthode</a>
+    <a href="index.html#services">Services</a>
+    <a href="histoire.html" class="active">Notre Histoire</a>
+    <a href="index.html#fondateurs">Fondateurs</a>
+    <a href="academy.html">Academy</a>
+    <a href="diagnostic.html" class="btn btn-primary" style="margin-top: 14px;">Parler de mon projet</a>
+  </div>
+
+  <main>
+    <!-- ==================================================
+         HERO SECTION
+         ================================================== -->
+    <section class="story-hero">
+      <div class="wrap">
+        <h1>L'Histoire d'une obsession : <br><span class="serif-italic">rendre le digital enfin rentable.</span></h1>
+        <p>Nous n'avons pas créé une énième agence de communication. Nous avons bâti un écosystème conçu pour résoudre l'injustice n°1 des entreprises ambitieuses à Dakar : investir massivement dans la visibilité sans jamais en voir l'impact sur leur chiffre d'affaires.</p>
+        
+        <div class="story-hero-buttons">
+          <a href="diagnostic.html" class="btn btn-primary">Parler de votre projet &rarr;</a>
+          <a href="methode.html" class="btn btn-ghost">Découvrir la méthode ACAS</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <!-- Quote Banner -->
+      <div class="story-manifesto-banner">
+        <blockquote class="story-manifesto-quote">
+          « La visibilité n'a de valeur que si elle <span class="serif-italic" style="color: var(--beige-poudre);">génère des revenus</span>. Tout le reste n'est que vanité. »
+        </blockquote>
+        <div class="story-manifesto-author">
+          <span class="manifesto-pill">PRINCIPE FONDATEUR</span>
+          <span>BRANDOSPHÈRE · DAKAR</span>
+        </div>
+      </div>
+
+      <!-- ==================================================
+           STORY CHAPTERS (DESIGN ÉDITORIAL AVEC FILIGRANES 01, 02, 03, 04)
+           ================================================== -->
+      <div class="story-chapters">
+        <!-- Chapitre 1 -->
+        <article class="story-chapter">
+          <div class="chapter-watermark" aria-hidden="true">01</div>
+          <div class="chapter-text">
+            <h2 class="chapter-title">Le piège de la communication décorative</h2>
+            <div class="chapter-body">
+              <p>Tout commence par une observation récurrente sur le marché ouest-africain et sénégalais. Partout, des dirigeants, des marques et des créateurs talentueux dépensaient des millions de Francs CFA dans des publications régulières, des shootings photo et des logos bien dessinés.</p>
+              <p>Pourtant, lorsqu'on interrogeait ces mêmes entrepreneurs sur l'impact financier réel de ces investissements, la réponse était quasi systématiquement la même : <em>« On a des likes, on a des commentaires, mais notre carnet de commandes reste imprévisible. »</em></p>
+              <p>Le diagnostic était sans appel : le marché du marketing digital souffrait d'une fracture majeure entre l'esthétique et le commerce.</p>
+            </div>
+            <div class="chapter-insight">
+              <strong>INSIGHT FONDATION</strong>
+              Une marque admirée qui ne convertit pas est un gouffre financier. L'esthétique sans système de vente n'est qu'une illusion.
+            </div>
+          </div>
+          <div class="chapter-media">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop" alt="Le constat du marché marketing à Dakar">
+            <div class="chapter-media-overlay"></div>
+            <div class="chapter-media-tag">01 · ANALYSE DU MARCHÉ</div>
+          </div>
+        </article>
+
+        <!-- Chapitre 2 -->
+        <article class="story-chapter reversed">
+          <div class="chapter-watermark" aria-hidden="true">02</div>
+          <div class="chapter-text">
+            <h2 class="chapter-title">Pourquoi les agences classiques échouent</h2>
+            <div class="chapter-body">
+              <p>En analysant les mécanismes traditionnels, une évidence s'est imposée : les agences classiques travaillent en silos hermétiques. Le graphiste livre un visuel sans comprendre l'offre. Le community manager poste sans tunnel de capture. Le média buyer achète de la publicité sur une page qui ne convertit pas.</p>
+              <p>Chaque intervenant fait son métier dans son coin, et personne n'assume la responsabilité ultime du résultat : <strong>le chiffre d'affaires</strong>.</p>
+              <p>Nous avons refusé ce modèle fragmenté. Pour qu'une entreprise croisse de façon prévisible, il lui faut un système complet où chaque maillon de la chaîne renforce directement le suivant.</p>
+            </div>
+            <div class="chapter-insight">
+              <strong>RUPTURE MÉTHODOLOGIQUE</strong>
+              En séparant la création visuelle de l'acquisition payante, le modèle classique dilue la responsabilité du chiffre d'affaires.
+            </div>
+          </div>
+          <div class="chapter-media">
+            <img src="https://images.unsplash.com/photo-1542744094-3a31727223ec?q=80&w=1200&auto=format&fit=crop" alt="Déconstruction des agences traditionnelles">
+            <div class="chapter-media-overlay"></div>
+            <div class="chapter-media-tag">02 · DÉCONSTRUCTION DES SILOS</div>
+          </div>
+        </article>
+
+        <!-- Chapitre 3 -->
+        <article class="story-chapter">
+          <div class="chapter-watermark" aria-hidden="true">03</div>
+          <div class="chapter-text">
+            <h2 class="chapter-title">L'Écosystème holistique BRANDOSPHÈRE</h2>
+            <div class="chapter-body">
+              <p>Pour casser ce statu quo, nous avons conçu <strong>BRANDOSPHÈRE</strong> comme un écosystème holistique à 360°. Ni simple agence de pub, ni cabinet de conseil théorique, mais un partenaire de croissance intégré.</p>
+              <p>Nous avons réuni sous un même toit ce qui n'aurait jamais dû être séparé : la stratégie business, la direction artistique de prestige, la production vidéo cinématique, l'ingénierie d'acquisition payante (Meta/Google Ads) et les tunnels de conversion automatisés.</p>
+              <p>De cette synergie est née la méthode <strong>ACAS</strong> (Analyse, Construction, Activation, Scaling), un cadre rigoureux qui élimine l'improvisation et garantit une traction commerciale mesurable.</p>
+            </div>
+            <div class="chapter-insight">
+              <strong>MOTEUR DE CROISSANCE</strong>
+              La méthode ACAS unifie direction artistique et ingénierie d'acquisition pour générer un flux ininterrompu de prospects qualifiés.
+            </div>
+          </div>
+          <div class="chapter-media">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop" alt="L'écosystème Brandosphère à Dakar">
+            <div class="chapter-media-overlay"></div>
+            <div class="chapter-media-tag">03 · ARCHITECTURE ACAS</div>
+          </div>
+        </article>
+
+        <!-- Chapitre 4 -->
+        <article class="story-chapter reversed">
+          <div class="chapter-watermark" aria-hidden="true">04</div>
+          <div class="chapter-text">
+            <h2 class="chapter-title">Faire rayonner les champions africains</h2>
+            <div class="chapter-body">
+              <p>Basés à Dakar, au cœur d'une Afrique en pleine effervescence technologique et créative, notre ambition dépasse les frontières nationales. Nous voulons doter les champions africains de demain des standards de communication et de performance les plus élevés au monde.</p>
+              <p>À travers notre pôle <strong>BRANDOSPHÈRE Academy</strong>, nous formons également la prochaine génération de créateurs, de designers et de stratèges d'élite pour pérenniser ce savoir-faire sur le continent.</p>
+              <p>Chaque collaboration est pour nous une alliance : nous ne prenons en charge que des entreprises en lesquelles nous croyons profondément, avec une volonté farouche de faire décoller leurs résultats.</p>
+            </div>
+            <div class="chapter-insight">
+              <strong>IMPACT CONTINENTAL</strong>
+              Élever les standards de Dakar aux exigences mondiales et former les futurs leaders créatifs via BRANDOSPHÈRE Academy.
+            </div>
+          </div>
+          <div class="chapter-media">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Ambition panafricaine de Brandosphère">
+            <div class="chapter-media-overlay"></div>
+            <div class="chapter-media-tag">04 · VISION PANAFRICAINE</div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ==================================================
+           FOUNDERS SPOTLIGHT ("LES PILOTES DU SYSTÈME")
+           ================================================== -->
+      <section class="founders-section">
+        <h2 class="pilotes-main-title">Les pilotes du système</h2>
+        <div class="pilotes-subtitle">Deux visions, <span class="serif-italic">une seule exigence : résultats.</span></div>
+        <p class="pilotes-desc">L'alliance indissociable entre l'analyse business du ROI et le prestige de la création artistique.</p>
+
+        <div class="founders-duo-grid">
+          <!-- Fondateur 1 -->
+          <article class="founder-duo-card-dark">
+            <div class="founder-duo-photo-box">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="Fondateur 1 - Stratégie & Croissance">
+            </div>
+            <div class="founder-duo-body-dark">
+              <div>
+                <div class="founder-duo-label">Pôle Performance & Acquisition</div>
+                <h3 class="founder-duo-name">Fondateur 1</h3>
+                <div class="founder-duo-role">Co-Fondateur & Lead Stratège</div>
+                <p class="founder-duo-bio">Pilote la stratégie de croissance globale, l'acquisition payante et l'alignement direct entre vos investissements publicitaires et votre rentabilité commerciale nette.</p>
+              </div>
+              <div class="founder-duo-tags">
+                <span>Stratégie Business</span>
+                <span>Acquisition Ads</span>
+                <span>Modélisation ROI</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Fondateur 2 -->
+          <article class="founder-duo-card-dark">
+            <div class="founder-duo-photo-box">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" alt="Fondateur 2 - Image & Direction Artistique">
+            </div>
+            <div class="founder-duo-body-dark">
+              <div>
+                <div class="founder-duo-label">Pôle Image & Direction Artistique</div>
+                <h3 class="founder-duo-name">Fondateur 2</h3>
+                <div class="founder-duo-role">Co-Fondateur & Directeur Créatif</div>
+                <p class="founder-duo-bio">Dirige la création visuelle haut de gamme, les productions vidéo cinématiques et le storytelling de marque pour ériger votre entreprise au rang d'autorité incontestable.</p>
+              </div>
+              <div class="founder-duo-tags">
+                <span>Branding Prestige</span>
+                <span>Films Publicitaires</span>
+                <span>Direction Artistique</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           FINAL CTA (STRICTEMENT EN DEUX LIGNES)
+           ================================================== -->
+      <div class="story-cta">
+        <h2 class="story-cta-title">
+          <span class="cta-line-1">Prêt à écrire le prochain chapitre</span>
+          <span class="cta-line-2">de votre <span class="serif-italic">croissance ?</span></span>
+        </h2>
+        <p>Ne laissez plus votre communication au hasard. Réservez une session de diagnostic stratégique offerte avec notre équipe et découvrez comment nous pouvons structurer votre machine à convertir.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="diagnostic.html" class="btn btn-primary" style="padding: 15px 32px; font-size: 15.5px;">Réserver mon diagnostic stratégique &rarr;</a>
+          <a href="services.html" class="btn btn-ghost" style="padding: 15px 32px; font-size: 15.5px;">Explorer nos services</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ====================================================
+       FOOTER UNIFIÉ BRANDOSPHÈRE
+       ================================================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <!-- Col 1: Marque -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" style="height: 30px; width: auto; margin-bottom: 14px;">
+          </div>
+          <p class="footer-brand-desc">Écosystème de croissance digitale à Dakar. On transforme votre visibilité en chiffre d'affaires mesurable.</p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col-nav">
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="methode.html">Méthode ACAS</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="histoire.html">Notre Histoire</a></li>
+            <li><a href="academy.html">Academy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Expertises -->
+        <div class="footer-col-exp">
+          <div class="footer-col-title">Expertises</div>
+          <ul class="footer-links">
+            <li><a href="services.html#strategie">Stratégie & Conseil</a></li>
+            <li><a href="services.html#branding">Branding & Design</a></li>
+            <li><a href="services.html#video">Production Vidéo</a></li>
+            <li><a href="services.html#ads">Publicité Digitale (Ads)</a></li>
+            <li><a href="services.html#dev">Développement & Tunnels</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-col-contact">
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-list">
+            <div>Dakar, Sénégal</div>
+            <div>hello@brandosphere.co</div>
+            <div><a href="diagnostic.html" style="color:var(--beige-poudre); text-decoration:none; font-weight:600;">Prendre rendez-vous &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barre du bas -->
+      <div class="footer-bottom" style="display: flex; justify-content: center; text-align: center;">
+        <div>© 2026 BRANDOSPHÈRE · Tous droits réservés</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('scroll-progress');
+      if (bar) bar.style.width = scrolled + '%';
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    if (menuBtn && drawer) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('open');
+        drawer.classList.toggle('open');
+      });
+      drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('open');
+          drawer.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

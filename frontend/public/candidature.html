@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidature Academy — BRANDOSPHÈRE Dakar</title>
+  <meta name="description" content="Déposez votre candidature pour intégrer les cursus d'élite de BRANDOSPHÈRE Academy à Dakar. Formations immersives en vidéo, design, growth marketing et social media.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="SVG/BRANDO FAVICON.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --marron-dominant: #1A0309;
+      --marron-card: #2B050E;
+      --marron-elevated: #3D0715;
+      --marron-border: rgba(251, 216, 181, 0.16);
+      --beige-poudre: #FBD8B5;
+      --beige-hover: #F7C79D;
+      --beige-light: #FFF7F0;
+      --indigo: #500A1E;
+      --cream: #FFF7F0;
+      --slate: #E2C6AD;
+      --slate-2: #B0937A;
+      --line: rgba(251, 216, 181, 0.12);
+      --line-strong: rgba(251, 216, 181, 0.28);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A0309; }
+    ::-webkit-scrollbar-thumb { background: rgba(251, 216, 181, 0.2); border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FBD8B5; }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #FBD8B5, #FFE4CB);
+      z-index: 10000;
+      width: 0%;
+      transition: width 0.1s ease-out;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #1A0309 !important;
+      color: #FFF7F0 !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      line-height: 1.7 !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #1A0309 !important;
+      color: #FFF7F0 !important;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrap {
+      max-width: 1040px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+      width: 100%;
+    }
+
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+    }
+
+    .bg-glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* Typo Utilities */
+    .serif-italic {
+      font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--beige-poudre);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: 1px solid transparent;
+      outline: none;
+    }
+
+    .btn-primary {
+      background-color: var(--beige-poudre);
+      color: #1A0309;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--beige-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(251, 216, 181, 0.25);
+    }
+
+    .btn-ghost {
+      background: rgba(251, 216, 181, 0.05);
+      color: var(--cream);
+      border-color: var(--line);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(251, 216, 181, 0.12);
+      border-color: var(--beige-poudre);
+      color: var(--beige-poudre);
+      transform: translateY(-2px);
+    }
+
+    /* ==================================================
+       NAVBAR (Sticky Floating Pill)
+       ================================================== */
+    .navbar {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: calc(100% - 48px);
+      max-width: 1040px;
+      background: rgba(26, 3, 9, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar-inner {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-logo-img {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--beige-poudre);
+    }
+
+    .nav-cta-wrap .btn {
+      padding: 9px 20px;
+      font-size: 12.5px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--cream);
+      border-radius: 2px;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 80px;
+      left: 16px;
+      right: 16px;
+      z-index: 999;
+      background: rgba(26, 3, 9, 0.95);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 32px 20px;
+      transform: translateY(-120%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mobile-drawer a {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-drawer a:hover,
+    .mobile-drawer a.active {
+      color: var(--marron-dominant);
+      background-color: var(--beige-poudre);
+    }
+
+    @media (max-width: 960px) {
+      .nav-links, .nav-cta-wrap { display: none !important; }
+      .mobile-menu-btn { display: flex !important; }
+      .navbar {
+        height: 56px;
+        padding: 0 16px;
+        top: 12px;
+        width: calc(100% - 24px);
+      }
+      .nav-logo-img { height: 26px; }
+    }
+
+    /* ==================================================
+       HERO CANDIDATURE
+       ================================================== */
+    .candidature-hero {
+      padding: 150px 0 50px;
+      text-align: center;
+      position: relative;
+    }
+
+    .candidature-hero h1 {
+      font-size: clamp(36px, 5.5vw, 60px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      color: var(--cream);
+    }
+
+    .candidature-hero p {
+      font-size: clamp(16px, 2.2vw, 19px);
+      color: var(--slate);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ==================================================
+       APPLICATION FORM CONTAINER
+       ================================================== */
+    .candidature-form-wrap {
+      margin-bottom: 110px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .candidature-card {
+      background: linear-gradient(135deg, rgba(43, 5, 14, 0.75), rgba(27, 4, 15, 0.92));
+      border: 1px solid var(--line-strong);
+      border-radius: 32px;
+      padding: clamp(32px, 5vw, 56px) clamp(20px, 4vw, 48px);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-step-title {
+      font-size: clamp(20px, 3vw, 24px);
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .step-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1A0309;
+      background: var(--beige-poudre);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .form-step-subtitle {
+      font-size: 14.5px;
+      color: var(--slate);
+      margin-bottom: 24px;
+    }
+
+    /* Grid Formations Radio Selection */
+    .formation-select-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+
+    .formation-option {
+      background: rgba(26, 3, 9, 0.6);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .formation-option:hover {
+      border-color: rgba(251, 216, 181, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .formation-option.selected {
+      background: linear-gradient(135deg, rgba(80, 10, 30, 0.6), rgba(43, 5, 14, 0.8));
+      border-color: var(--beige-poudre);
+      box-shadow: 0 10px 25px rgba(251, 216, 181, 0.12);
+    }
+
+    .formation-option-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .formation-option-title {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.3;
+      padding-right: 28px;
+    }
+
+    .formation-radio-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--line-strong);
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .formation-option.selected .formation-radio-dot {
+      border-color: var(--beige-poudre);
+    }
+
+    .formation-radio-dot::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--beige-poudre);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.2s ease;
+    }
+
+    .formation-option.selected .formation-radio-dot::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .formation-option-desc {
+      font-size: 13.5px;
+      color: var(--slate);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .formation-duration-tag {
+      align-self: flex-start;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--beige-poudre);
+      background: rgba(251, 216, 181, 0.08);
+      border: 1px solid rgba(251, 216, 181, 0.18);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .formation-select-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Candidate Inputs Grid */
+    .candidate-fields-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--beige-poudre);
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .form-label .required {
+      color: #FF7B72;
+    }
+
+    .form-input,
+    .form-select {
+      background: rgba(20, 2, 7, 0.7);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 18px;
+      color: var(--cream);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.25s ease;
+      width: 100%;
+    }
+
+    .form-input::placeholder {
+      color: rgba(226, 198, 173, 0.45);
+    }
+
+    .form-input:focus,
+    .form-select:focus {
+      border-color: var(--beige-poudre);
+      box-shadow: 0 0 0 3px rgba(251, 216, 181, 0.12);
+      background: rgba(26, 3, 9, 0.9);
+    }
+
+    .form-select option {
+      background: #1A0309;
+      color: var(--cream);
+      padding: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .candidate-fields-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Commitment Checkbox Callout Box */
+    .commitment-callout {
+      background: rgba(80, 10, 30, 0.4);
+      border: 1px solid rgba(251, 216, 181, 0.25);
+      border-radius: 20px;
+      padding: 22px 24px;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .commitment-callout:hover {
+      border-color: rgba(251, 216, 181, 0.45);
+      background: rgba(80, 10, 30, 0.55);
+    }
+
+    .custom-checkbox-wrap {
+      position: relative;
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .custom-checkbox-wrap input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .custom-checkbox-box {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--beige-poudre);
+      background: rgba(26, 3, 9, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+
+    .custom-checkbox-wrap input[type="checkbox"]:checked + .custom-checkbox-box {
+      background: var(--beige-poudre);
+    }
+
+    .custom-checkbox-box svg {
+      width: 14px;
+      height: 14px;
+      stroke: #1A0309;
+      stroke-width: 3;
+      fill: none;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.2s ease;
+    }
+
+    .custom-checkbox-wrap input[type="checkbox"]:checked + .custom-checkbox-box svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .commitment-text {
+      font-size: 14.5px;
+      color: var(--cream);
+      line-height: 1.6;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .commitment-text strong {
+      color: var(--beige-poudre);
+    }
+
+    /* Submit Section */
+    .submit-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      padding-top: 10px;
+    }
+
+    .btn-submit-candidature {
+      width: 100%;
+      max-width: 380px;
+      padding: 16px 36px;
+      font-size: 16px;
+      justify-content: center;
+    }
+
+    .submit-note {
+      font-size: 13px;
+      color: var(--slate);
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Error Message */
+    .form-error-alert {
+      display: none;
+      background: rgba(235, 87, 87, 0.15);
+      border: 1px solid rgba(235, 87, 87, 0.4);
+      color: #FFB4B4;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-size: 14px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    /* ====================================================
+       FOOTER BRANDOSPHÈRE (COMPOSANT UNIFIÉ LANDING PAGE)
+       ================================================== */
+    .footer {
+      background: linear-gradient(180deg, #580B22 0%, #380614 100%) !important;
+      border-radius: 44px 44px 0 0 !important;
+      max-width: 1240px !important;
+      width: calc(100% - 32px) !important;
+      margin: 48px auto 0 auto !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      border-bottom: none !important;
+      padding: 70px 0 40px !important;
+      position: relative;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand-desc {
+      color: var(--slate);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+    .footer-col-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14.5px;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover {
+      color: var(--beige-poudre);
+    }
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--slate);
+      font-size: 14px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(251, 216, 181, 0.18);
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: var(--slate);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+    @media (max-width: 768px) {
+      .footer {
+        border-radius: 32px 32px 0 0 !important;
+        width: calc(100% - 20px) !important;
+        margin: 24px auto 0 auto !important;
+        padding: 50px 0 30px !important;
+      }
+    }
+    @media (max-width: 580px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+      .footer-brand-header {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-bottom: 12px !important;
+      }
+      .footer-brand-header img {
+        margin: 0 auto !important;
+        display: block !important;
+        height: 32px !important;
+        width: auto !important;
+      }
+      .footer-brand-desc {
+        text-align: center !important;
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        margin: 0 auto !important;
+      }
+      .footer-col-nav, .footer-col-exp, .footer-col-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .footer-links {
+        align-items: center !important;
+      }
+      .footer-bottom {
+        text-align: center !important;
+        justify-content: center !important;
+        padding-top: 24px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Noise Overlay -->
+  <svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+  </svg>
+
+  <!-- Ambient Glows -->
+  <div class="bg-glow-orb" style="top: 10%; left: 5%; width: 500px; height: 500px; background: #500A1E;"></div>
+  <div class="bg-glow-orb" style="top: 55%; right: 5%; width: 450px; height: 450px; background: #500A1E;"></div>
+
+  <!-- ==================================================
+       NAVBAR
+       ================================================== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-brand" aria-label="BRANDOSPHÈRE Accueil">
+        <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" class="nav-logo-img">
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#methode">Méthode</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="histoire.html">Notre Histoire</a></li>
+          <li><a href="academy.html">Academy</a></li>
+          <li><a href="candidature.html" class="active">Candidature</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta-wrap">
+        <a href="diagnostic.html" class="btn btn-primary">Parler de mon projet</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#methode">Méthode</a>
+    <a href="services.html">Services</a>
+    <a href="histoire.html">Notre Histoire</a>
+    <a href="academy.html">Academy</a>
+    <a href="candidature.html" class="active">Candidature</a>
+    <a href="diagnostic.html" class="btn btn-primary" style="margin-top: 14px;">Parler de mon projet</a>
+  </div>
+
+  <main>
+    <!-- ==================================================
+         HERO SECTION
+         ================================================== -->
+    <section class="candidature-hero">
+      <div class="wrap">
+        <h1>Candidature <span class="serif-italic">Academy</span></h1>
+        <p>Remplissez vos coordonnées pour postuler à la prochaine promotion d'élite. Effectifs strictement limités à 15 talents par cohorte à Dakar pour garantir un encadrement sur-mesure.</p>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         FORM CONTAINER
+         ================================================== -->
+    <section class="candidature-form-wrap">
+      <div class="wrap">
+        <form id="candidatureForm" class="candidature-card" novalidate>
+          <div id="formError" class="form-error-alert"></div>
+
+          <!-- ÉTAPE 1 : CHOIX DE LA FORMATION -->
+          <div class="form-step">
+            <h2 class="form-step-title">
+              <span class="step-badge">Étape 01</span>
+              Choisissez votre formation
+            </h2>
+            <p class="form-step-subtitle">Sélectionnez le cursus pour lequel vous souhaitez déposer votre candidature.</p>
+
+            <div class="formation-select-grid" id="formationOptions">
+              <!-- Formation 1 -->
+              <div class="formation-option selected" data-formation-id="video" data-title="Création de Contenu Vidéo & Storytelling Mobile" data-duration="6 Semaines · Intensif">
+                <div class="formation-option-header">
+                  <div class="formation-option-title">Création de Contenu Vidéo & Storytelling Mobile</div>
+                  <div class="formation-radio-dot"></div>
+                </div>
+                <p class="formation-option-desc">Écriture virale, tournage studio & mobile, montage dynamique sur CapCut et Premiere Pro.</p>
+                <span class="formation-duration-tag">6 Semaines · Intensif</span>
+              </div>
+
+              <!-- Formation 2 -->
+              <div class="formation-option" data-formation-id="design" data-title="Brand Design & Direction Artistique" data-duration="8 Semaines · Immersion">
+                <div class="formation-option-header">
+                  <div class="formation-option-title">Brand Design & Direction Artistique</div>
+                  <div class="formation-radio-dot"></div>
+                </div>
+                <p class="formation-option-desc">Identités visuelles de prestige, typographie, charte graphique et maîtrise Photoshop, Illustrator & Figma.</p>
+                <span class="formation-duration-tag">8 Semaines · Immersion</span>
+              </div>
+
+              <!-- Formation 3 -->
+              <div class="formation-option" data-formation-id="growth" data-title="Growth Marketing & Achat Média (Ads)" data-duration="6 Semaines · Pratique">
+                <div class="formation-option-header">
+                  <div class="formation-option-title">Growth Marketing & Achat Média (Ads)</div>
+                  <div class="formation-radio-dot"></div>
+                </div>
+                <p class="formation-option-desc">Meta Ads, Google Ads, TikTok Ads, tracking et gestion de budgets publicitaires réels.</p>
+                <span class="formation-duration-tag">6 Semaines · Pratique</span>
+              </div>
+
+              <!-- Formation 4 -->
+              <div class="formation-option" data-formation-id="social" data-title="Social Media Management & Stratégie d'Influence" data-duration="6 Semaines · Pro">
+                <div class="formation-option-header">
+                  <div class="formation-option-title">Social Media Management & Influence</div>
+                  <div class="formation-radio-dot"></div>
+                </div>
+                <p class="formation-option-desc">Calendriers éditoriaux, partenariats créateurs, gestion de communauté et conversion client.</p>
+                <span class="formation-duration-tag">6 Semaines · Pro</span>
+              </div>
+
+              <!-- Option 5 : Orientation -->
+              <div class="formation-option" style="grid-column: 1 / -1;" data-formation-id="orientation" data-title="Orientation & Conseil personnalisé" data-duration="Entretien diagnostic">
+                <div class="formation-option-header">
+                  <div class="formation-option-title">Je souhaite être orienté(e) selon mes compétences actuelles</div>
+                  <div class="formation-radio-dot"></div>
+                </div>
+                <p class="formation-option-desc">L'équipe pédagogique analysera votre profil pour vous recommander le cursus le plus adapté à vos ambitions.</p>
+                <span class="formation-duration-tag">Diagnostic d'admission offert</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ÉTAPE 2 : VOS COORDONNÉES -->
+          <div class="form-step">
+            <h2 class="form-step-title">
+              <span class="step-badge">Étape 02</span>
+              Vos coordonnées personnelles
+            </h2>
+            <p class="form-step-subtitle">Ces informations permettront à la direction pédagogique de prendre contact avec vous.</p>
+
+            <div class="candidate-fields-grid">
+              <!-- Nom & Prénom -->
+              <div class="form-group full-width">
+                <label class="form-label" for="candidateName">Nom et Prénom <span class="required">*</span></label>
+                <input type="text" id="candidateName" class="form-input" placeholder="Ex: Moussa Diop" required>
+              </div>
+
+              <!-- Pays -->
+              <div class="form-group">
+                <label class="form-label" for="candidateCountry">Pays de résidence <span class="required">*</span></label>
+                <select id="candidateCountry" class="form-select" required>
+                  <option value="Sénégal" selected>Sénégal</option>
+                  <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                  <option value="Mali">Mali</option>
+                  <option value="Guinée">Guinée</option>
+                  <option value="Bénin">Bénin</option>
+                  <option value="Togo">Togo</option>
+                  <option value="Burkina Faso">Burkina Faso</option>
+                  <option value="France / Europe">France / Europe</option>
+                  <option value="Autre pays">Autre pays</option>
+                </select>
+              </div>
+
+              <!-- Ville -->
+              <div class="form-group">
+                <label class="form-label" for="candidateCity">Ville <span class="required">*</span></label>
+                <input type="text" id="candidateCity" class="form-input" value="Dakar" placeholder="Ex: Dakar, Thiès, Abidjan..." required>
+              </div>
+
+              <!-- Quartier -->
+              <div class="form-group full-width">
+                <label class="form-label" for="candidateNeighborhood">Quartier / Commune de résidence <span class="required">*</span></label>
+                <input type="text" id="candidateNeighborhood" class="form-input" placeholder="Ex: Almadies, Mermoz, Plateau, Ngor, Point E, Sacré-Cœur, Yoff..." required>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label class="form-label" for="candidateEmail">Adresse Email <span class="required">*</span></label>
+                <input type="email" id="candidateEmail" class="form-input" placeholder="moussa@exemple.com" required>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="form-group">
+                <label class="form-label" for="candidateWhatsapp">Numéro WhatsApp <span class="required">*</span></label>
+                <input type="tel" id="candidateWhatsapp" class="form-input" placeholder="+221 77 000 00 00" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- ÉTAPE 3 : ENGAGEMENT ET MODALITÉ D'ACCÈS -->
+          <div class="form-step">
+            <h2 class="form-step-title">
+              <span class="step-badge">Étape 03</span>
+              Confirmation & Modalités d'accès
+            </h2>
+            <p class="form-step-subtitle">Veuillez valider les conditions d'admission au cursus.</p>
+
+            <div class="commitment-callout" id="commitmentBox">
+              <div class="custom-checkbox-wrap">
+                <input type="checkbox" id="commitmentCheck" required>
+                <div class="custom-checkbox-box">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+              </div>
+              <label class="commitment-text" for="commitmentCheck">
+                Je confirme mon intérêt pour la formation sélectionnée ci-dessus et <strong>je certifie être prêt(e) à régler les frais de formation</strong> pour intégrer la promotion d'élite auprès de <strong>BRANDOSPHÈRE</strong>.
+              </label>
+            </div>
+          </div>
+
+          <!-- ÉTAPE 4 : BOUTON DE SOUMISSION WHATSAPP -->
+          <div class="submit-wrap">
+            <button type="submit" class="btn btn-primary btn-submit-candidature" id="btnSubmit">
+              Envoyer ma candidature via WhatsApp &rarr;
+            </button>
+            <div class="submit-note">
+              🔒 Votre dossier sera directement transmis à la direction pédagogique pour planifier votre entretien.
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================
+       FOOTER UNIFIÉ BRANDOSPHÈRE
+       ================================================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <!-- Col 1: Marque -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" style="height: 30px; width: auto; margin-bottom: 14px;">
+          </div>
+          <p class="footer-brand-desc">Écosystème de croissance digitale à Dakar. On transforme votre visibilité en chiffre d'affaires mesurable.</p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col-nav">
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="methode.html">Méthode ACAS</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="histoire.html">Notre Histoire</a></li>
+            <li><a href="academy.html">Academy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Expertises -->
+        <div class="footer-col-exp">
+          <div class="footer-col-title">Expertises</div>
+          <ul class="footer-links">
+            <li><a href="services.html#strategie">Stratégie & Conseil</a></li>
+            <li><a href="services.html#branding">Branding & Design</a></li>
+            <li><a href="services.html#video">Production Vidéo</a></li>
+            <li><a href="services.html#ads">Publicité Digitale (Ads)</a></li>
+            <li><a href="services.html#dev">Développement & Tunnels</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-col-contact">
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-list">
+            <div>Dakar, Sénégal</div>
+            <div>hello@brandosphere.co</div>
+            <div><a href="diagnostic.html" style="color:var(--beige-poudre); text-decoration:none; font-weight:600;">Prendre rendez-vous &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="display: flex; justify-content: center; text-align: center;">
+        <div>© 2026 BRANDOSPHÈRE · Tous droits réservés</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('scroll-progress');
+      if (bar) bar.style.width = scrolled + '%';
+    });
+
+    // Mobile drawer toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileBtn && mobileDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('open');
+      });
+      document.addEventListener('click', (e) => {
+        if (!mobileBtn.contains(e.target) && !mobileDrawer.contains(e.target)) {
+          mobileDrawer.classList.remove('open');
+        }
+      });
+    }
+
+    // Gestion du choix de formation
+    const formationCards = document.querySelectorAll('.formation-option');
+    let selectedFormation = {
+      id: 'video',
+      title: 'Création de Contenu Vidéo & Storytelling Mobile',
+      duration: '6 Semaines · Intensif'
+    };
+
+    function selectFormationById(id) {
+      let found = false;
+      formationCards.forEach(card => {
+        if (card.getAttribute('data-formation-id') === id) {
+          card.classList.add('selected');
+          selectedFormation = {
+            id: card.getAttribute('data-formation-id'),
+            title: card.getAttribute('data-title'),
+            duration: card.getAttribute('data-duration')
+          };
+          found = true;
+        } else {
+          card.classList.remove('selected');
+        }
+      });
+      return found;
+    }
+
+    formationCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.getAttribute('data-formation-id');
+        selectFormationById(id);
+      });
+    });
+
+    // Détection du paramètre URL ?formation=
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const formationParam = params.get('formation');
+      if (formationParam) {
+        selectFormationById(formationParam.toLowerCase());
+      }
+    });
+
+    // Soumission du formulaire et redirection WhatsApp
+    const candidatureForm = document.getElementById('candidatureForm');
+    const formError = document.getElementById('formError');
+    const commitmentCheck = document.getElementById('commitmentCheck');
+    const commitmentBox = document.getElementById('commitmentBox');
+
+    candidatureForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formError.style.display = 'none';
+      formError.textContent = '';
+      commitmentBox.style.borderColor = 'rgba(251, 216, 181, 0.25)';
+
+      const name = document.getElementById('candidateName').value.trim();
+      const country = document.getElementById('candidateCountry').value.trim();
+      const city = document.getElementById('candidateCity').value.trim();
+      const neighborhood = document.getElementById('candidateNeighborhood').value.trim();
+      const email = document.getElementById('candidateEmail').value.trim();
+      const whatsapp = document.getElementById('candidateWhatsapp').value.trim();
+
+      if (!name) {
+        showError('Veuillez renseigner votre Nom et Prénom.');
+        document.getElementById('candidateName').focus();
+        return;
+      }
+      if (!city) {
+        showError('Veuillez renseigner votre Ville.');
+        document.getElementById('candidateCity').focus();
+        return;
+      }
+      if (!neighborhood) {
+        showError('Veuillez renseigner votre Quartier / Commune de résidence.');
+        document.getElementById('candidateNeighborhood').focus();
+        return;
+      }
+      if (!email || !email.includes('@')) {
+        showError('Veuillez renseigner une adresse email valide.');
+        document.getElementById('candidateEmail').focus();
+        return;
+      }
+      if (!whatsapp) {
+        showError('Veuillez renseigner votre numéro WhatsApp.');
+        document.getElementById('candidateWhatsapp').focus();
+        return;
+      }
+      if (!commitmentCheck.checked) {
+        showError('Veuillez cocher la case confirmant votre intérêt et votre accord sur les frais de scolarité pour valider votre candidature.');
+        commitmentBox.style.borderColor = '#FF7B72';
+        commitmentCheck.focus();
+        return;
+      }
+
+      // Formatage du message WhatsApp
+      const waNumber = '221770000000'; // Numéro officiel de la direction Brandosphère
+      const waMessage = 
+`🎓 *CANDIDATURE BRANDOSPHÈRE ACADEMY*
+
+📚 *Programme sélectionné :*
+${selectedFormation.title} (${selectedFormation.duration})
+
+👤 *Coordonnées du Candidat :*
+• Nom & Prénom : ${name}
+• Pays : ${country}
+• Ville : ${city}
+• Quartier : ${neighborhood}
+• Email : ${email}
+• WhatsApp : ${whatsapp}
+
+✅ *Engagement candidat :*
+Confirmé — Prêt(e) à régler les frais de formation auprès de BRANDOSPHÈRE.
+
+Bonjour l'équipe Brandosphère, je vous transmets ma candidature pour la prochaine promotion.`;
+
+      const encodedUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+      
+      // Redirection WhatsApp
+      window.open(encodedUrl, '_blank');
+    });
+
+    function showError(msg) {
+      formError.textContent = msg;
+      formError.style.display = 'block';
+      formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+</body>
+</html>

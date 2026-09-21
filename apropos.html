@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Histoire & Fondateurs — BRANDOSPHÈRE Dakar</title>
+  <meta http-equiv="refresh" content="0; url=histoire.html">
+  <script>window.location.replace("histoire.html");</script>
+  <meta name="description" content="Découvrez l'histoire de BRANDOSPHÈRE, notre vision de la croissance digitale à Dakar et la présentation des fondateurs.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* GELLIX FONT FAMILY DEFINITIONS */
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Thin'), url('./fonts/Gellix-Thin.ttf') format('truetype'); font-weight: 100; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-ThinItalic'), url('./fonts/Gellix-ThinItalic.ttf') format('truetype'); font-weight: 100; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Light'), url('./fonts/Gellix-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-LightItalic'), url('./fonts/Gellix-LightItalic.ttf') format('truetype'); font-weight: 300; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Regular'), url('./fonts/Gellix-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-RegularItalic'), url('./fonts/Gellix-RegularItalic.ttf') format('truetype'); font-weight: 400; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Medium'), url('./fonts/Gellix-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-MediumItalic'), url('./fonts/Gellix-MediumItalic.ttf') format('truetype'); font-weight: 500; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-SemiBold'), url('./fonts/Gellix-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-SemiBoldItalic'), url('./fonts/Gellix-SemiBoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Bold'), url('./fonts/Gellix-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-BoldItalic'), url('./fonts/Gellix-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-ExtraBold'), url('./fonts/Gellix-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-ExtraBoldItalic'), url('./fonts/Gellix-ExtraBoldItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-Black'), url('./fonts/Gellix-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; }
+    @font-face { font-family: 'Gellix', sans-serif; src: local('Gellix-BlackItalic'), url('./fonts/Gellix-BlackItalic.ttf') format('truetype'); font-weight: 900; font-style: italic; }
+
+    :root {
+      --indigo: #500A1E;
+      --indigo-2: #3F0717;
+      --indigo-deep: #2B040F;
+      --emerald: #FBD8B5;
+      --emerald-dim: #F7C79D;
+      --amber: #FBD8B5;
+      --cream: #FFF5EC;
+      --slate: #E4C7AC;
+      --slate-2: #B89B80;
+      --line: rgba(251, 216, 181, 0.16);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background-color: var(--indigo-deep); color: var(--cream); font-family: 'Gellix', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--indigo-deep); color: var(--cream); overflow-x: hidden; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 26px; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .eyebrow { font-family: 'Gellix', sans-serif; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--emerald); display: inline-flex; align-items: center; gap: 10px; }
+    .eyebrow::before { content: ''; width: 24px; height: 1px; background-color: var(--emerald); display: inline-block; }
+
+    h1, h2, h3, h4 { font-family: 'Gellix', sans-serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.08; color: var(--cream); }
+    .serif-italic { color: var(--emerald); }
+    .serif-italic { color: var(--amber); }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: 'Gellix', sans-serif; font-weight: 600; font-size: 14.5px; padding: 13px 22px; border-radius: 11px; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background-color .2s ease; }
+    .btn-primary { background-color: var(--emerald); color: #500A1E; }
+    .btn-primary:hover { transform: translateY(-2px); background-color: var(--emerald-dim); }
+
+    /* Navbar */
+    .navbar { position: sticky; top: 0; z-index: 50; height: 70px; background: rgba(80, 10, 30, 0.72); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; color: var(--cream); }
+    .nav-brand svg { width: 36px; height: 36px; }
+    .nav-brand-text { font-family: 'Gellix', sans-serif; font-weight: 700; font-size: 19px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 14.5px; color: var(--slate); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--cream); }
+
+    /* Page Hero */
+    .page-hero { padding: 90px 0 60px; text-align: center; }
+    .page-hero h1 { font-size: clamp(34px, 5.5vw, 62px); margin: 18px 0 22px; }
+    .page-hero p { color: var(--slate); font-size: 17px; max-width: 680px; margin: 0 auto 36px; }
+
+    /* Story Section */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+    .story-content p { color: var(--slate); font-size: 16.5px; margin-bottom: 20px; line-height: 1.7; }
+
+    /* Fondateurs Section */
+    .section-fondateurs {
+      background-color: var(--indigo);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 96px 0;
+      margin-bottom: 90px;
+    }
+    .fondateurs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 46px;
+    }
+    .founder-card {
+      background: rgba(255, 255, 255, .025);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px 32px;
+    }
+    .founder-header { display: flex; gap: 20px; align-items: center; margin-bottom: 24px; }
+    .founder-avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--indigo-2), var(--indigo-deep));
+      border: 1px solid rgba(255, 255, 255, .15);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; flex-shrink: 0;
+    }
+    .founder-initials { font-family: 'Gellix', sans-serif; font-weight: 800; font-size: 30px; }
+    .founder-satellite { position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--indigo-deep); }
+    .sat-emerald { background-color: var(--emerald); }
+    .sat-amber { background-color: var(--amber); }
+    .founder-name { font-family: 'Gellix', sans-serif; font-weight: 700; font-size: 22px; margin-bottom: 4px; }
+    .founder-role { font-family: 'Gellix', sans-serif; font-size: 12px; font-weight: 700; }
+    .founder-bio { color: var(--slate); font-size: 14.5px; line-height: 1.6; }
+    .founder-quote { color: var(--slate); font-size: 14.5px; font-style: italic; margin-top: 14px; border-left: 2px solid var(--line); padding-left: 14px; }
+    .founder-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+    .tag { font-family: 'Gellix', sans-serif; font-size: 11px; border: 1px solid var(--line); border-radius: 999px; padding: 6px 11px; color: var(--slate); }
+
+    /* ====================================================
+       FOOTER BRANDOSPHÈRE (COMPOSANT UNIFIÉ LANDING PAGE)
+       ================================================== */
+    .footer {
+      background: linear-gradient(180deg, #580B22 0%, #380614 100%) !important;
+      border-radius: 44px 44px 0 0 !important;
+      max-width: 1240px !important;
+      width: calc(100% - 32px) !important;
+      margin: 48px auto 0 auto !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      border-bottom: none !important;
+      padding: 70px 0 40px !important;
+      position: relative;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-desc {
+      color: var(--slate);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--beige-poudre);
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14.5px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--beige-poudre);
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--slate);
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(251, 216, 181, 0.18);
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: var(--slate);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        border-radius: 32px 32px 0 0 !important;
+        width: calc(100% - 20px) !important;
+        margin: 24px auto 0 auto !important;
+        padding: 50px 0 30px !important;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+      .footer-brand-header {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-bottom: 12px !important;
+      }
+      .footer-brand-header img {
+        margin: 0 auto !important;
+        display: block !important;
+        height: 32px !important;
+        width: auto !important;
+      }
+      .footer-brand-desc {
+        text-align: center !important;
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        margin: 0 auto !important;
+      }
+      .footer-col-nav, .footer-col-exp, .footer-col-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .footer-links {
+        align-items: center !important;
+      }
+      .footer-bottom {
+        text-align: center !important;
+        justify-content: center !important;
+        padding-top: 24px !important;
+      }
+    }
+  
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+    }
+
+  
+    /* --- ENHANCED BRANDOSPHERE THEME (MARRON #500A1E & BEIGE POUDRÉ #FBD8B5) --- */
+    .navbar {
+      position: fixed !important;
+      top: 16px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: calc(100% - 48px) !important;
+      max-width: 1140px !important;
+      z-index: 100 !important;
+      height: 64px !important;
+      background: rgba(80, 10, 30, 0.88) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.22) !important;
+      border-radius: 9999px !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 24px !important;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 20px rgba(251, 216, 181, 0.08) !important;
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        width: calc(100% - 24px) !important;
+        top: 12px !important;
+        height: 58px !important;
+        padding: 0 16px !important;
+      }
+    }
+
+    .btn-primary, .btn-amber {
+      background-color: #FBD8B5 !important;
+      color: #500A1E !important;
+      font-weight: 700 !important;
+      border: 1px solid #FBD8B5 !important;
+      box-shadow: 0 4px 16px rgba(251, 216, 181, 0.25) !important;
+      transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+    .btn-primary:hover, .btn-amber:hover {
+      background-color: #F7C79D !important;
+      color: #500A1E !important;
+      transform: scale(1.03) translateY(-2px) !important;
+      box-shadow: 0 12px 28px rgba(251, 216, 181, 0.4) !important;
+    }
+    .btn-ghost {
+      background-color: rgba(251, 216, 181, 0.08) !important;
+      color: #FFF5EC !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      transition: all 0.25s ease !important;
+    }
+    .btn-ghost:hover {
+      border-color: #FBD8B5 !important;
+      color: #FBD8B5 !important;
+      background-color: rgba(251, 216, 181, 0.16) !important;
+      transform: translateY(-2px) !important;
+    }
+    .eyebrow {
+      color: #FBD8B5 !important;
+    }
+    .eyebrow::before, .eyebrow::after {
+      background-color: #FBD8B5 !important;
+    }
+    .serif-italic, .serif-italic {
+      color: #FBD8B5 !important;
+    }
+
+  
+    /* ==========================================================================
+       BRANDOSPHÈRE ULTRA-MODERN LUXURY SYSTEM (MARRON #500A1E & BEIGE POUDRÉ #FBD8B5)
+       ========================================================================== */
+    :root {
+      --marron-dominant: #500A1E;
+      --marron-deep: #21030B;
+      --marron-card: #3A0615;
+      --marron-elevated: #540A1F;
+      --beige-poudre: #FBD8B5;
+      --beige-hover: #F7C79D;
+      --beige-light: #FFF5EC;
+      --indigo: #500A1E;
+      --indigo-2: #3F0717;
+      --indigo-deep: #21030B;
+      --emerald: #FBD8B5;
+      --emerald-dim: #F7C79D;
+      --amber: #FBD8B5;
+      --cream: #FFF5EC;
+      --slate: #E4C7AC;
+      --slate-2: #B89B80;
+      --line: rgba(251, 216, 181, 0.18);
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #21030B; }
+    ::-webkit-scrollbar-thumb { background: rgba(251, 216, 181, 0.25); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FBD8B5; }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FBD8B5, #FFE4CB);
+      z-index: 10000;
+      width: 0%;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 12px rgba(251, 216, 181, 0.8);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #21030B !important;
+      color: #FFF5EC !important;
+      font-family: 'Plus Jakarta Sans', 'Gellix', sans-serif !important;
+    }
+
+    body {
+      background-color: #21030B !important;
+      color: #FFF5EC !important;
+      overflow-x: hidden;
+    }
+
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.045;
+    }
+
+    /* Ambient Orbs */
+    .bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* Floating Glass Pill Navbar */
+    .navbar {
+      position: fixed !important;
+      top: 18px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: calc(100% - 48px) !important;
+      max-width: 1140px !important;
+      z-index: 1000 !important;
+      height: 66px !important;
+      background: rgba(43, 4, 15, 0.84) !important;
+      backdrop-filter: blur(24px) !important;
+      -webkit-backdrop-filter: blur(24px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.22) !important;
+      border-radius: 9999px !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 28px !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(251, 216, 181, 0.08) !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        width: calc(100% - 24px) !important;
+        top: 12px !important;
+        height: 58px !important;
+        padding: 0 16px !important;
+      }
+    }
+
+    .nav-links a {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      color: #E4C7AC !important;
+      padding: 8px 16px !important;
+      border-radius: 9999px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #500A1E !important;
+      background-color: #FBD8B5 !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 15px rgba(251, 216, 181, 0.35) !important;
+    }
+
+    /* Dramatic Titles & Accents */
+    .serif-italic, .hero-dramatic-serif {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-style: italic !important;
+      font-weight: 700 !important;
+      color: #FBD8B5 !important;
+      padding: 0 4px;
+    }
+
+    /* Eyebrow & Badges */
+    .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 12px !important;
+      letter-spacing: 0.22em !important;
+      text-transform: uppercase !important;
+      color: #FBD8B5 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      background: rgba(251, 216, 181, 0.08) !important;
+      border: 1px solid rgba(251, 216, 181, 0.2) !important;
+      padding: 6px 16px !important;
+      border-radius: 9999px !important;
+    }
+    .eyebrow::before, .eyebrow::after { display: none !important; }
+
+    /* Ultra Modern Cards */
+    .problem-card-box, .service-card, .method-step-card, .fondateur-card, .stat-card, .pack-card, .diag-step-card, .faq-item {
+      border-radius: 2rem !important;
+      background: rgba(58, 6, 21, 0.58) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.18) !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(251, 216, 181, 0.15) !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .problem-card-box:hover, .service-card:hover, .method-step-card:hover, .fondateur-card:hover, .stat-card:hover, .pack-card:hover, .diag-step-card:hover, .faq-item:hover {
+      transform: translateY(-6px) scale(1.015) !important;
+      border-color: rgba(251, 216, 181, 0.45) !important;
+      box-shadow: 0 30px 60px rgba(20, 2, 7, 0.8), 0 0 30px rgba(251, 216, 181, 0.18) !important;
+    }
+
+    /* Buttons */
+    .btn-primary, .btn-amber {
+      background: linear-gradient(135deg, #FBD8B5 0%, #F7C79D 100%) !important;
+      color: #500A1E !important;
+      font-weight: 700 !important;
+      font-size: 15px !important;
+      padding: 14px 28px !important;
+      border-radius: 9999px !important;
+      border: 1px solid #FBD8B5 !important;
+      box-shadow: 0 6px 20px rgba(251, 216, 181, 0.28) !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover, .btn-amber:hover {
+      transform: scale(1.04) translateY(-2px) !important;
+      box-shadow: 0 14px 35px rgba(251, 216, 181, 0.45), 0 0 20px rgba(251, 216, 181, 0.2) !important;
+    }
+
+    .btn-ghost {
+      background: rgba(251, 216, 181, 0.08) !important;
+      color: #FFF5EC !important;
+      font-weight: 600 !important;
+      font-size: 15px !important;
+      padding: 14px 28px !important;
+      border-radius: 9999px !important;
+      border: 1px solid rgba(251, 216, 181, 0.25) !important;
+      backdrop-filter: blur(12px) !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(251, 216, 181, 0.18) !important;
+      border-color: #FBD8B5 !important;
+      color: #FBD8B5 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Pulsing Badge Dot */
+    .pulse-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #FBD8B5;
+      box-shadow: 0 0 10px #FBD8B5;
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; box-shadow: 0 0 18px #FBD8B5; }
+    }
+
+    /* GSAP Smooth Reveal Class */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* ==========================================================================
+       BRANDOSPHÈRE ARCHITECTURAL MINIMALISM (MARRON #500A1E & BEIGE POUDRÉ #FBD8B5)
+       Design Épuré, Doux, Non-Agressif, Convaincant
+       ========================================================================== */
+
+    :root {
+      --marron-dominant: #500A1E;
+      --marron-deep: #1A0309;
+      --marron-card: #2B050E;
+      --marron-elevated: #3D0715;
+      --beige-poudre: #FBD8B5;
+      --beige-hover: #F7C79D;
+      --beige-light: #FFF7F0;
+      --indigo: #500A1E;
+      --indigo-2: #2B050E;
+      --indigo-deep: #1A0309;
+      --emerald: #FBD8B5;
+      --emerald-dim: #F7C79D;
+      --amber: #FBD8B5;
+      --cream: #FFF7F0;
+      --slate: #E2C6AD;
+      --slate-2: #B0937A;
+      --line: rgba(251, 216, 181, 0.12);
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A0309; }
+    ::-webkit-scrollbar-thumb { background: rgba(251, 216, 181, 0.2); border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FBD8B5; }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #FBD8B5, #FFE4CB);
+      z-index: 10000;
+      width: 0%;
+      transition: width 0.1s ease-out;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #1A0309 !important;
+      color: #FFF7F0 !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      line-height: 1.7 !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #1A0309 !important;
+      color: #FFF7F0 !important;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      max-width: 1040px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+    }
+
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+    }
+
+    /* Ambient Soft Lighting */
+    .minimal-bg-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.25;
+    }
+
+    /* Floating Pill Navbar - Soft Minimalist */
+    .navbar {
+      position: fixed !important;
+      top: 20px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: calc(100% - 48px) !important;
+      max-width: 1040px !important;
+      z-index: 1000 !important;
+      height: 60px !important;
+      background: rgba(35, 4, 12, 0.78) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.16) !important;
+      border-radius: 9999px !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 24px !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        width: calc(100% - 24px) !important;
+        top: 12px !important;
+        height: 54px !important;
+        padding: 0 16px !important;
+      }
+    }
+
+    .nav-brand-text {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 17px !important;
+      letter-spacing: 0.05em !important;
+      color: #FFF7F0 !important;
+    }
+
+    .nav-links a {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 13.5px !important;
+      font-weight: 400 !important;
+      color: #E2C6AD !important;
+      padding: 6px 14px !important;
+      border-radius: 9999px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #500A1E !important;
+      background-color: #FBD8B5 !important;
+      font-weight: 600 !important;
+    }
+
+    /* Elegant Serif Accent */
+    .serif-italic, .hero-serif-italic {
+      font-family: 'Instrument Serif', Georgia, serif !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      font-size: 1.08em !important;
+      color: #FBD8B5 !important;
+    }
+
+    /* Minimal Eyebrows & Badges */
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 11px !important;
+      letter-spacing: 0.18em !important;
+      text-transform: uppercase !important;
+      color: #FBD8B5 !important;
+      background: rgba(251, 216, 181, 0.06) !important;
+      border: 1px solid rgba(251, 216, 181, 0.16) !important;
+      padding: 5px 14px !important;
+      border-radius: 9999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+    .eyebrow::before, .eyebrow::after { display: none !important; }
+
+    /* Minimal Cards Architecture */
+    .problem-card-box, .service-card, .method-step-card, .fondateur-card, .stat-card, .pack-card, .diag-step-card, .faq-item {
+      border-radius: 1.8rem !important;
+      background: rgba(43, 5, 14, 0.5) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border: 1px solid rgba(251, 216, 181, 0.14) !important;
+      padding: 38px 34px !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .problem-card-box:hover, .service-card:hover, .method-step-card:hover, .fondateur-card:hover, .stat-card:hover, .pack-card:hover, .diag-step-card:hover, .faq-item:hover {
+      transform: translateY(-4px) !important;
+      border-color: rgba(251, 216, 181, 0.35) !important;
+      box-shadow: 0 24px 50px rgba(10, 1, 4, 0.6) !important;
+    }
+
+    /* Soft Buttons */
+    .btn-primary, .btn-amber {
+      background: #FBD8B5 !important;
+      color: #500A1E !important;
+      font-weight: 600 !important;
+      font-size: 14.5px !important;
+      padding: 13px 26px !important;
+      border-radius: 9999px !important;
+      border: 1px solid #FBD8B5 !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover, .btn-amber:hover {
+      background: #F7C79D !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 24px rgba(251, 216, 181, 0.3) !important;
+    }
+
+    .btn-ghost {
+      background: rgba(251, 216, 181, 0.05) !important;
+      color: #FFF7F0 !important;
+      font-weight: 500 !important;
+      font-size: 14.5px !important;
+      padding: 13px 26px !important;
+      border-radius: 9999px !important;
+      border: 1px solid rgba(251, 216, 181, 0.2) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(251, 216, 181, 0.14) !important;
+      border-color: #FBD8B5 !important;
+      color: #FBD8B5 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Pulse Dot Minimal */
+    .pulse-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #FBD8B5;
+      box-shadow: 0 0 8px #FBD8B5;
+      animation: pulse-soft 2.5s infinite ease-in-out;
+    }
+    @keyframes pulse-soft {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+    }
+
+    /* Soft Section Spacing */
+    .hero-section, .section-problem, .section-fondateurs, .page-hero {
+      padding: 110px 0 90px !important;
+    }
+
+    .reveal-soft {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-soft.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+</style>
+  <!-- Google Fonts & GSAP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Google Fonts & GSAP Minimalist Setup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+</head>
+<body>
+  <svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+  </svg>
+
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="wrap">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-brand">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <g transform="rotate(-24 60 60)"><path d="M10 60 A50 17 0 0 1 110 60" fill="none" stroke="rgba(18,226,154,.5)" stroke-width="5"/></g>
+            <circle cx="60" cy="60" r="24" fill="currentColor"/>
+            <g transform="rotate(-24 60 60)"><path d="M10 60 A50 17 0 0 0 110 60" fill="none" stroke="#FBD8B5" stroke-width="5" stroke-linecap="round"/><circle cx="110" cy="60" r="7" fill="#FBD8B5"/></g>
+          </svg>
+          <span class="nav-brand-text">BRANDOSPHÈRE</span>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="methode.html">Méthode</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="apropos.html" class="active">À propos</a></li>
+            <li><a href="#fondateurs">Fondateurs</a></li>
+            <li><a href="academy.html">Academy</a></li>
+          </ul>
+        </nav>
+        <div>
+          <a href="diagnostic.html" class="btn btn-primary">Parler de mon projet</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content: center;">Manifeste & Vision</div>
+      <h1>Un écosystème de <span class="serif-italic">croissance</span> à Dakar</h1>
+      <p>Découvrez la conviction qui anime BRANDOSPHÈRE et la complémentarité de nos équipes d'ingénierie de marque.</p>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section>
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-content">
+          <div class="eyebrow">Notre Genèse</div>
+          <h2 style="font-size:36px; margin: 16px 0 24px;">Construire plus qu'une simple agence</h2>
+          <p>BRANDOSPHÈRE est née de la rencontre de deux passionnés du digital à Dakar, réunis autour d'une même frustration : voir des entreprises talentueuses investir dans la communication sans jamais transformer cette énergie en résultats concrets.</p>
+          <p>Nous avons décidé de construire autre chose qu'une agence classique. <strong style="color:var(--cream);">Un écosystème</strong> capable de penser la marque, le marketing et la vente comme un seul système cohérent, orienté vers un objectif unique : la croissance réelle du chiffre d'affaires de nos clients.</p>
+          <p>Depuis le Sénégal, notre ambition est de devenir une référence panafricaine de la croissance business par la communication stratégique.</p>
+        </div>
+
+        <div style="aspect-ratio:1/1; border:1px solid var(--line); border-radius:24px; background:radial-gradient(120% 120% at 30% 20%, rgba(18,226,154,.1), rgba(255,255,255,.02)); display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 200 200" style="width: 75%; height: auto;" aria-hidden="true">
+            <g transform="rotate(-24 100 100)"><path d="M 20 100 A 80 28 0 0 1 180 100" fill="none" stroke="rgba(18,226,154,.3)" stroke-width="4"/></g>
+            <g transform="rotate(35 100 100)"><path d="M 20 100 A 80 28 0 0 1 180 100" fill="none" stroke="rgba(246,180,76,.3)" stroke-width="4"/></g>
+            <circle cx="100" cy="100" r="42" fill="var(--cream)"/>
+            <g transform="rotate(-24 100 100)"><path d="M 20 100 A 80 28 0 0 0 180 100" fill="none" stroke="#FBD8B5" stroke-width="4" stroke-linecap="round"/><circle cx="180" cy="100" r="8" fill="#FBD8B5"/></g>
+            <g transform="rotate(35 100 100)"><path d="M 20 100 A 80 28 0 0 0 180 100" fill="none" stroke="#FBD8B5" stroke-width="4" stroke-linecap="round"/><circle cx="180" cy="100" r="8" fill="#FBD8B5"/></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONDATEURS SECTION -->
+  <section class="section-fondateurs" id="fondateurs">
+    <div class="wrap">
+      <div style="text-align:center; max-width:600px; margin: 0 auto;">
+        <div class="eyebrow" style="justify-content:center;">Les Fondateurs</div>
+        <h2 style="font-size:38px; margin: 16px 0;">Deux visions, une seule sphère</h2>
+        <p style="color:var(--slate);">Deux profils complémentaires (la stratégie et la création) au service d'un même objectif : votre croissance.</p>
+      </div>
+
+      <div class="fondateurs-grid">
+        <!-- Fondateur 1 -->
+        <article class="founder-card">
+          <div class="founder-header">
+            <div class="founder-avatar">
+              <span class="founder-initials">PN</span>
+              <div class="founder-satellite sat-emerald"></div>
+            </div>
+            <div>
+              <h3 class="founder-name">[Prénom Nom]</h3>
+              <div class="founder-role serif-italic">CO-FONDATEUR · STRATÉGIE & CROISSANCE</div>
+            </div>
+          </div>
+          <p class="founder-bio">Passionné par le marketing orienté résultats, [Prénom] pilote la stratégie et la performance. Sa mission : s'assurer que chaque action se traduise en chiffre d'affaires pour nos clients.</p>
+          <p class="founder-quote">« Une belle image qui ne vend pas ne sert à rien. On construit des systèmes qui rapportent. »</p>
+          <div class="founder-tags">
+            <span class="tag">Stratégie</span>
+            <span class="tag">Acquisition</span>
+            <span class="tag">Business</span>
+          </div>
+        </article>
+
+        <!-- Fondateur 2 -->
+        <article class="founder-card">
+          <div class="founder-header">
+            <div class="founder-avatar">
+              <span class="founder-initials">PN</span>
+              <div class="founder-satellite sat-amber"></div>
+            </div>
+            <div>
+              <h3 class="founder-name">[Prénom Nom]</h3>
+              <div class="founder-role serif-italic">CO-FONDATEUR · CRÉATION & MARQUE</div>
+            </div>
+          </div>
+          <p class="founder-bio">Créatif dans l'âme, [Prénom] façonne l'identité et l'univers visuel des marques. Il transforme la stratégie en contenus et en expériences qui marquent les esprits.</p>
+          <p class="founder-quote">« Une marque forte, c'est une marque qu'on reconnaît et qu'on retient. C'est là que tout commence. »</p>
+          <div class="founder-tags">
+            <span class="tag">Branding</span>
+            <span class="tag">Direction artistique</span>
+            <span class="tag">Contenu</span>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align:center; margin-top: 50px;">
+        <a href="diagnostic.html" class="btn btn-primary">Rejoindre l'écosystème BRANDOSPHÈRE &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       FOOTER UNIFIÉ BRANDOSPHÈRE
+       ================================================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <!-- Col 1: Marque -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="SVG/BRANDO LOGO.svg" alt="BRANDOSPHÈRE" style="height: 30px; width: auto; margin-bottom: 14px;">
+          </div>
+          <p class="footer-brand-desc">Écosystème de croissance digitale à Dakar. On transforme votre visibilité en chiffre d'affaires mesurable.</p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col-nav">
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="methode.html">Méthode ACAS</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="histoire.html">Notre Histoire</a></li>
+            <li><a href="academy.html">Academy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Expertises -->
+        <div class="footer-col-exp">
+          <div class="footer-col-title">Expertises</div>
+          <ul class="footer-links">
+            <li><a href="services.html#strategie">Stratégie & Conseil</a></li>
+            <li><a href="services.html#branding">Branding & Design</a></li>
+            <li><a href="services.html#video">Production Vidéo</a></li>
+            <li><a href="services.html#ads">Publicité Digitale (Ads)</a></li>
+            <li><a href="services.html#dev">Développement & Tunnels</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-col-contact">
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-list">
+            <div>Dakar, Sénégal</div>
+            <div>hello@brandosphere.co</div>
+            <div><a href="diagnostic.html" style="color:var(--beige-poudre); text-decoration:none; font-weight:600;">Prendre rendez-vous &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barre du bas -->
+      <div class="footer-bottom" style="display: flex; justify-content: center; text-align: center;">
+        <div>© 2026 BRANDOSPHÈRE · Tous droits réservés</div>
+      </div>
+    </div>
+  </footer>
+
+
+  <div id="scroll-progress"></div>
+  <script>
+    // 1. Scroll Progress Bar Update
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) progressBar.style.width = scrolled + '%';
+    });
+
+    // 2. IntersectionObserver Smooth Reveal
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const revealElements = document.querySelectorAll('h1, h2, h3, .problem-card-box, .service-card, .method-step-card, .fondateur-card, .stat-card, .pack-card, .diag-step-card, .hero-content, .hero-buttons');
+      revealElements.forEach(el => {
+        el.classList.add('reveal-up');
+        observer.observe(el);
+      });
+
+      // 3. GSAP smooth animations if GSAP is present
+      if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.navbar', { y: -50, opacity: 0, duration: 1, ease: 'power3.out' });
+      }
+    });
+  </script>
+
+</body>
+</html>
